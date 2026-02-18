@@ -22,9 +22,11 @@ Synthetic traceability mapping based on CDISC conventions.
 trace_mapping
 }
 \description{
-Maps ADaM variables to their SDTM source variables with derivation
-text and confidence scores. Includes direct copies, derived variables,
-and unmapped entries.
+Maps ADaM (Analysis Data Model) variables to their SDTM (Study Data
+Tabulation Model) source variables with derivation text and confidence
+scores. Includes direct copies, derived variables, and unmapped entries.
+Follows CDISC (Clinical Data Interchange Standards Consortium)
+traceability conventions.
 }
 \examples{
 data(trace_mapping)

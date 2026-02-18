@@ -3,7 +3,7 @@
 \docType{data}
 \name{sdtm_metadata}
 \alias{sdtm_metadata}
-\title{SDTM Metadata}
+\title{SDTM Variable-Level Metadata}
 \format{
 A tibble with 43 rows and 6 columns:
 \describe{
@@ -12,18 +12,21 @@ A tibble with 43 rows and 6 columns:
 \item{label}{Character. Variable label.}
 \item{type}{Character. Variable type (Char or Num).}
 \item{length}{Integer. Variable length.}
-\item{format}{Character. SAS format (or NA).}
+\item{format}{Character. SAS (Statistical Analysis System) format (or NA).}
 }
 }
 \source{
-Synthetic metadata based on CDISC SDTM standards.
+Synthetic metadata based on CDISC SDTM (Study Data Tabulation
+Model) standards.
 }
 \usage{
 sdtm_metadata
 }
 \description{
-SDTM variable-level metadata for DM (17 vars), AE (14 vars),
-and LB (12 vars). Follows CDISC SDTM conventions.
+SDTM (Study Data Tabulation Model) variable-level metadata for DM
+(Demographics, 17 vars), AE (Adverse Events, 14 vars), and LB
+(Laboratory Results, 12 vars). Follows CDISC (Clinical Data
+Interchange Standards Consortium) SDTM conventions.
 }
 \examples{
 data(sdtm_metadata)

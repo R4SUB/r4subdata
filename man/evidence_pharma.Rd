@@ -27,15 +27,18 @@ A tibble with 250 rows and 17 columns:
 }
 }
 \source{
-Synthetic data based on CDISC Pilot Study structure.
+Synthetic data based on the CDISC (Clinical Data Interchange
+Standards Consortium) Pilot Study 01 structure.
 }
 \usage{
 evidence_pharma
 }
 \description{
-A realistic evidence table for study CDISCPILOT01 covering all four
-R4SUB pillars (quality, trace, risk, usability) with 250 rows and
-18 indicators across multiple datasets and sources.
+A realistic evidence table for study CDISCPILOT01 (Clinical Data
+Interchange Standards Consortium Pilot Study 01) covering all four
+R4SUB (R for Regulatory Submission) pillars (quality, trace, risk,
+usability) with 250 rows and 18 indicators across multiple datasets
+and sources.
 }
 \examples{
 data(evidence_pharma)

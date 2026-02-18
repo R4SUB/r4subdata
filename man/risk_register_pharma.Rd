@@ -19,15 +19,19 @@ A tibble with 18 rows and 9 columns:
 }
 }
 \source{
-Synthetic risk register based on ICH Q9 risk management principles.
+Synthetic risk register based on ICH (International Council
+for Harmonisation) Q9 quality risk management principles.
 }
 \usage{
 risk_register_pharma
 }
 \description{
-An FMEA-based risk register with 18 risks covering data quality,
-traceability, documentation, programming, and compliance categories.
-Includes probability, impact, and detectability scores on a 1-5 scale.
+A Failure Mode and Effects Analysis (FMEA)-based risk register with
+18 risks covering data quality, traceability, documentation,
+programming, and compliance categories. Includes probability, impact,
+and detectability scores on a 1-5 scale. Structured according to
+ICH (International Council for Harmonisation) Q9 quality risk
+management principles.
 }
 \examples{
 data(risk_register_pharma)

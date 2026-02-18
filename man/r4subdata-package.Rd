@@ -6,7 +6,7 @@
 \alias{r4subdata-package}
 \title{r4subdata: Example Datasets for Clinical Submission Readiness}
 \description{
-Provides realistic example datasets for the R4SUB ecosystem. Includes a pharma study evidence table, ADaM and SDTM metadata, traceability mappings, a risk register, and regulatory indicator definitions. Designed for demos, vignettes, and package testing.
+Provides realistic synthetic example datasets for the R4SUB (R for Regulatory Submission) ecosystem. Includes a pharma study evidence table, ADaM (Analysis Data Model) and SDTM (Study Data Tabulation Model) metadata following CDISC (Clinical Data Interchange Standards Consortium) conventions (\url{https://www.cdisc.org}), traceability mappings, a risk register based on ICH (International Council for Harmonisation) Q9 quality risk management principles (\url{https://www.ich.org/page/quality-guidelines}), and regulatory indicator definitions. Designed for demos, vignettes, and package testing.
 }
 \seealso{
 Useful links:
@@ -17,7 +17,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Pawan Rama Mali \email{prm@outlook.in}
+\strong{Maintainer}: Pawan Rama Mali \email{prm@outlook.in} [copyright holder]
 
 }
 \keyword{internal}

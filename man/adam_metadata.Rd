@@ -3,7 +3,7 @@
 \docType{data}
 \name{adam_metadata}
 \alias{adam_metadata}
-\title{ADaM Metadata}
+\title{ADaM Variable-Level Metadata}
 \format{
 A tibble with 36 rows and 6 columns:
 \describe{
@@ -12,18 +12,22 @@ A tibble with 36 rows and 6 columns:
 \item{label}{Character. Variable label.}
 \item{type}{Character. Variable type (Char or Num).}
 \item{length}{Integer. Variable length.}
-\item{format}{Character. SAS format (or NA).}
+\item{format}{Character. SAS (Statistical Analysis System) format (or NA).}
 }
 }
 \source{
-Synthetic metadata based on CDISC ADaM standards.
+Synthetic metadata based on CDISC ADaM (Analysis Data Model)
+standards.
 }
 \usage{
 adam_metadata
 }
 \description{
-ADaM variable-level metadata for ADSL (16 vars), ADAE (10 vars),
-and ADLB (10 vars). Follows CDISC ADaM conventions.
+ADaM (Analysis Data Model) variable-level metadata for ADSL
+(Subject-Level Analysis Dataset, 16 vars), ADAE (Adverse Events
+Analysis Dataset, 10 vars), and ADLB (Laboratory Results Analysis
+Dataset, 10 vars). Follows CDISC (Clinical Data Interchange Standards
+Consortium) ADaM conventions.
 }
 \examples{
 data(adam_metadata)
