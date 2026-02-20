@@ -1,12 +1,21 @@
 # r4subdata
 
+[![R-CMD-check](https://github.com/R4SUB/r4subdata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/R4SUB/r4subdata/actions/workflows/R-CMD-check.yaml) [![CRAN status](https://www.r-pkg.org/badges/version/r4subdata)](https://CRAN.R-project.org/package=r4subdata) [![CRAN downloads](https://cranlogs.r-pkg.org/badges/r4subdata)](https://CRAN.R-project.org/package=r4subdata) [![r-universe](https://r4sub.r-universe.dev/badges/r4subdata)](https://r4sub.r-universe.dev/r4subdata)
+
 **r4subdata** provides realistic example datasets for the R4SUB clinical submission readiness ecosystem.
 
 Designed for demos, vignettes, and package testing -- like `nycflights13` or `palmerpenguins`.
 
 ## Installation
 
+### CRAN
 ```r
+install.packages("r4subdata")
+```
+
+### Development install
+```r
+# install.packages("pak")
 pak::pak("R4SUB/r4subdata")
 ```
 
