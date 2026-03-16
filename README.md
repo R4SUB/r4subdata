@@ -1,21 +1,23 @@
 # r4subdata
 
-[![R-CMD-check](https://github.com/R4SUB/r4subdata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/R4SUB/r4subdata/actions/workflows/R-CMD-check.yaml) [![CRAN status](https://www.r-pkg.org/badges/version/r4subdata)](https://CRAN.R-project.org/package=r4subdata) [![CRAN downloads](https://cranlogs.r-pkg.org/badges/r4subdata)](https://CRAN.R-project.org/package=r4subdata) [![r-universe](https://r4sub.r-universe.dev/badges/r4subdata)](https://r4sub.r-universe.dev/r4subdata)
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/R4SUB/r4subdata/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/R4SUB/r4subdata/actions/workflows/R-CMD-check.yaml)
+[![CRAN status](https://www.r-pkg.org/badges/version/r4subdata)](https://CRAN.R-project.org/package=r4subdata)
+[![CRAN downloads](https://cranlogs.r-pkg.org/badges/r4subdata)](https://CRAN.R-project.org/package=r4subdata)
+[![r-universe](https://r4sub.r-universe.dev/badges/r4subdata)](https://r4sub.r-universe.dev/r4subdata)
+<!-- badges: end -->
 
-**r4subdata** provides realistic example datasets for the R4SUB clinical submission readiness ecosystem.
-
-Designed for demos, vignettes, and package testing -- like `nycflights13` or `palmerpenguins`.
+**r4subdata** provides realistic example datasets for the R4SUB clinical submission readiness ecosystem — designed for demos, vignettes, and package testing, like `nycflights13` or `palmerpenguins`.
 
 ## Installation
 
-### CRAN
 ```r
 install.packages("r4subdata")
 ```
 
-### Development install
+Development version:
+
 ```r
-# install.packages("pak")
 pak::pak("R4SUB/r4subdata")
 ```
 
@@ -29,16 +31,23 @@ pak::pak("R4SUB/r4subdata")
 | `trace_mapping` | 25 | ADaM-to-SDTM traceability mapping with confidence scores |
 | `risk_register_pharma` | 18 | FMEA risk register with P/I/D scores and mitigations |
 | `regulatory_indicators` | 30 | Indicator definitions across quality, trace, risk, usability |
+| `oncology_metadata` | 32 | ADaM variable metadata for ONCO-2025-001 (ADSL, ADRS, ADTTE) |
+| `oncology_evidence` | 29 | Evidence table for ONCO-2025-001 across all 4 pillars |
+
+```r
+library(r4subdata)
+list_datasets()
+```
 
 ## Quick Start
 
 ```r
 library(r4subdata)
 
-# Browse datasets
+# Explore available datasets
 list_datasets()
 
-# Load and explore
+# Load and inspect
 data(evidence_pharma)
 table(evidence_pharma$indicator_domain)
 
@@ -54,17 +63,20 @@ library(r4subscore)
 library(r4subdata)
 
 # Score the pharma evidence
-scores <- compute_indicator_scores(evidence_pharma)
+scores  <- compute_indicator_scores(evidence_pharma)
 pillars <- compute_pillar_scores(evidence_pharma)
-sci <- compute_sci(pillars)
+sci     <- compute_sci(pillars)
 
-# Trace with metadata
+# Traceability
 library(r4subtrace)
 model <- build_trace_model(adam_metadata, sdtm_metadata, trace_mapping)
 
 # Risk analysis
 library(r4subrisk)
 rr <- create_risk_register(risk_register_pharma)
+
+# Oncology study
+scores_onco <- compute_indicator_scores(oncology_evidence)
 ```
 
 ## License
