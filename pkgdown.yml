@@ -1,0 +1,9 @@
+pandoc: 3.1.11
+pkgdown: 2.2.0
+pkgdown_sha: ~
+articles:
+  example-datasets: example-datasets.html
+last_built: 2026-03-16T10:21Z
+urls:
+  reference: https://r4sub.github.io/r4subdata/reference
+  article: https://r4sub.github.io/r4subdata/articles
