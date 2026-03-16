@@ -19,15 +19,12 @@ navbar:
 
 home:
   title: "r4subdata — Example Datasets for R4SUB"
-  description: >
-    Synthetic example datasets for the R4SUB ecosystem including pharma and
-    oncology evidence tables, ADaM/SDTM metadata, traceability mappings,
-    risk registers, and regulatory indicator definitions.
 
 reference:
   - title: "Dataset Index"
     contents:
       - list_datasets
+      - dataset_dictionary
   - title: "Pharma Study Datasets"
     contents:
       - evidence_pharma
