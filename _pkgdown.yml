@@ -1,0 +1,47 @@
+url: https://r4sub.github.io/r4subdata/
+
+template:
+  bootstrap: 5
+  bootswatch: flatly
+  bslib:
+    primary: "#2C6DB5"
+
+navbar:
+  bg: light
+  structure:
+    left: [intro, reference, articles, news]
+    right: [search, github]
+  components:
+    github:
+      icon: fab fa-github
+      href: https://github.com/R4SUB/r4subdata
+      aria-label: GitHub
+
+home:
+  title: "r4subdata — Example Datasets for R4SUB"
+  description: >
+    Synthetic example datasets for the R4SUB ecosystem including pharma and
+    oncology evidence tables, ADaM/SDTM metadata, traceability mappings,
+    risk registers, and regulatory indicator definitions.
+
+reference:
+  - title: "Dataset Index"
+    contents:
+      - list_datasets
+  - title: "Pharma Study Datasets"
+    contents:
+      - evidence_pharma
+      - adam_metadata
+      - sdtm_metadata
+      - trace_mapping
+      - risk_register_pharma
+      - regulatory_indicators
+  - title: "Oncology Trial Datasets"
+    contents:
+      - oncology_metadata
+      - oncology_evidence
+
+footer:
+  structure:
+    left: developed_by
+    right: built_with

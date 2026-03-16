@@ -15,7 +15,7 @@ Description: Provides realistic synthetic example datasets for the R4SUB
     (<https://www.ich.org/page/quality-guidelines>), and regulatory indicator
     definitions. Designed for demos, vignettes, and package testing.
 License: MIT + file LICENSE
-URL: https://github.com/R4SUB/r4subdata
+URL: https://r4sub.github.io/r4subdata/, https://github.com/R4SUB/r4subdata
 BugReports: https://github.com/R4SUB/r4subdata/issues
 Depends:
     R (>= 4.2)
