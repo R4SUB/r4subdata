@@ -16,7 +16,9 @@ list_datasets <- function() {
       "sdtm_metadata",
       "trace_mapping",
       "risk_register_pharma",
-      "regulatory_indicators"
+      "regulatory_indicators",
+      "oncology_metadata",
+      "oncology_evidence"
     ),
     description = c(
       "Pharma study evidence table (CDISCPILOT01) with 250 rows across 4 domains",
@@ -24,7 +26,9 @@ list_datasets <- function() {
       "SDTM metadata for DM, AE, LB (40 variables)",
       "ADaM-to-SDTM traceability mapping (25 mappings)",
       "FMEA risk register with 18 risks and mitigations",
-      "Regulatory indicator definitions across 4 domains (30 indicators)"
+      "Regulatory indicator definitions across 4 domains (30 indicators)",
+      "Oncology trial ADaM metadata for ADSL, ADRS, ADTTE (32 variables)",
+      "Oncology trial evidence table (ONCO-2025-001) with 29 rows across 4 domains"
     ),
     n_rows = c(
       nrow(r4subdata::evidence_pharma),
@@ -32,7 +36,9 @@ list_datasets <- function() {
       nrow(r4subdata::sdtm_metadata),
       nrow(r4subdata::trace_mapping),
       nrow(r4subdata::risk_register_pharma),
-      nrow(r4subdata::regulatory_indicators)
+      nrow(r4subdata::regulatory_indicators),
+      nrow(r4subdata::oncology_metadata),
+      nrow(r4subdata::oncology_evidence)
     ),
     n_cols = c(
       ncol(r4subdata::evidence_pharma),
@@ -40,7 +46,9 @@ list_datasets <- function() {
       ncol(r4subdata::sdtm_metadata),
       ncol(r4subdata::trace_mapping),
       ncol(r4subdata::risk_register_pharma),
-      ncol(r4subdata::regulatory_indicators)
+      ncol(r4subdata::regulatory_indicators),
+      ncol(r4subdata::oncology_metadata),
+      ncol(r4subdata::oncology_evidence)
     )
   )
 }

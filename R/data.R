@@ -161,3 +161,68 @@
 #' data(regulatory_indicators)
 #' table(regulatory_indicators$domain)
 "regulatory_indicators"
+
+#' Oncology Trial Variable-Level Metadata
+#'
+#' ADaM (Analysis Data Model) variable-level metadata for a synthetic
+#' oncology trial covering ADSL (Subject-Level Analysis Dataset, 14 vars),
+#' ADRS (Response Analysis Dataset, 10 vars), and ADTTE (Time-to-Event
+#' Analysis Dataset, 8 vars). Includes origin, derivation, and codelist
+#' columns suitable for use with `r4subusability` assessments.
+#'
+#' @format A tibble with 32 rows and 7 columns:
+#' \describe{
+#'   \item{dataset}{Character. ADaM dataset name (ADSL, ADRS, ADTTE).}
+#'   \item{variable}{Character. Variable name.}
+#'   \item{label}{Character. Variable label.}
+#'   \item{origin}{Character. Variable origin (CRF, Derived, Assigned).}
+#'   \item{derivation}{Character. Derivation text (NA if not derived).}
+#'   \item{codelist}{Character. CDISC (Clinical Data Interchange Standards
+#'     Consortium) codelist code (NA if not applicable).}
+#'   \item{type}{Character. Variable type (Char or Num).}
+#' }
+#'
+#' @source Synthetic metadata for a Phase II oncology trial following CDISC
+#'   (Clinical Data Interchange Standards Consortium) ADaM conventions.
+#' @examples
+#' data(oncology_metadata)
+#' table(oncology_metadata$dataset)
+#' table(oncology_metadata$origin)
+"oncology_metadata"
+
+#' Oncology Trial Evidence Table
+#'
+#' A synthetic R4SUB evidence table for study ONCO-2025-001 covering all
+#' four R4SUB (R for Regulatory Submission) pillars (quality, trace, risk,
+#' usability) with 29 rows across ADSL, ADRS, and ADTTE datasets.
+#' Demonstrates realistic evidence patterns for an oncology submission
+#' with mixed pass/warn/fail results.
+#'
+#' @format A tibble with 29 rows and 17 columns:
+#' \describe{
+#'   \item{run_id}{Character. Unique run identifier.}
+#'   \item{study_id}{Character. Study identifier (ONCO-2025-001).}
+#'   \item{asset_type}{Character. Asset type: dataset, define, program,
+#'     validation, spec, other.}
+#'   \item{asset_id}{Character. Asset identifier (e.g., ADSL, ADRS).}
+#'   \item{source_name}{Character. Source tool name.}
+#'   \item{source_version}{Character. Version of the source tool.}
+#'   \item{indicator_id}{Character. Indicator identifier (e.g., Q-MISS-VAR).}
+#'   \item{indicator_name}{Character. Human-readable indicator name.}
+#'   \item{indicator_domain}{Character. Domain: quality, trace, risk, usability.}
+#'   \item{severity}{Character. Severity: info, low, medium, high, critical.}
+#'   \item{result}{Character. Result: pass, fail, warn, na.}
+#'   \item{metric_value}{Numeric. Metric value (if applicable).}
+#'   \item{metric_unit}{Character. Unit for metric_value.}
+#'   \item{message}{Character. Descriptive message.}
+#'   \item{location}{Character. Location reference (e.g., ADRS:AVAL).}
+#'   \item{evidence_payload}{Character. JSON payload with additional details.}
+#'   \item{created_at}{POSIXct. Timestamp when evidence was created.}
+#' }
+#'
+#' @source Synthetic evidence data for a Phase II oncology trial.
+#' @examples
+#' data(oncology_evidence)
+#' table(oncology_evidence$indicator_domain)
+#' table(oncology_evidence$result)
+"oncology_evidence"

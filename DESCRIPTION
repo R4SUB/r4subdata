@@ -1,9 +1,10 @@
 Package: r4subdata
 Title: Example Datasets for Clinical Submission Readiness
-Version: 0.1.0
+Version: 0.1.2
 Authors@R:
     person("Pawan Rama", "Mali", email = "prm@outlook.in",
-           role = c("aut", "cre", "cph"))
+           role = c("aut", "cre", "cph"),
+           comment = c(ORCID = "0000-0001-7864-5819"))
 Description: Provides realistic synthetic example datasets for the R4SUB
     (R for Regulatory Submission) ecosystem. Includes a pharma study evidence
     table, ADaM (Analysis Data Model) and SDTM (Study Data Tabulation Model)
@@ -21,7 +22,10 @@ Depends:
 Imports:
     tibble
 Suggests:
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
+VignetteBuilder: knitr
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

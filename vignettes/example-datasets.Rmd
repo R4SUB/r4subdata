@@ -1,0 +1,111 @@
+---
+title: "Example Datasets in r4subdata"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Example Datasets in r4subdata}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+The `r4subdata` package provides synthetic example datasets for the
+R4SUB (R for Regulatory Submission) ecosystem. They are suitable for
+demos, vignettes, and package testing.
+
+```{r load}
+library(r4subdata)
+```
+
+## Available datasets
+
+Use `list_datasets()` to see all datasets with descriptions:
+
+```{r list}
+list_datasets()
+```
+
+## Pharma study evidence table
+
+`evidence_pharma` is a 250-row evidence table for study CDISCPILOT01,
+covering all four R4SUB pillars.
+
+```{r evidence-pharma}
+data(evidence_pharma)
+dim(evidence_pharma)
+table(evidence_pharma$indicator_domain)
+table(evidence_pharma$result)
+```
+
+## ADaM metadata
+
+`adam_metadata` contains variable-level metadata for three ADaM datasets:
+ADSL, ADAE, and ADLB.
+
+```{r adam}
+data(adam_metadata)
+table(adam_metadata$dataset)
+head(adam_metadata[, c("dataset", "variable", "label", "type")])
+```
+
+## SDTM metadata
+
+`sdtm_metadata` mirrors the same structure for SDTM domains DM, AE, and LB.
+
+```{r sdtm}
+data(sdtm_metadata)
+table(sdtm_metadata$dataset)
+```
+
+## Traceability mapping
+
+`trace_mapping` links ADaM variables to their SDTM source variables.
+
+```{r trace}
+data(trace_mapping)
+head(trace_mapping)
+```
+
+## Risk register
+
+`risk_register_pharma` is an FMEA-based risk register with 18 risks
+structured according to ICH Q9 principles.
+
+```{r risk}
+data(risk_register_pharma)
+table(risk_register_pharma$category)
+table(risk_register_pharma$status)
+```
+
+## Regulatory indicator definitions
+
+`regulatory_indicators` is a reference table of 30 indicator definitions
+across all four R4SUB domains.
+
+```{r indicators}
+data(regulatory_indicators)
+table(regulatory_indicators$domain)
+```
+
+## Oncology trial datasets
+
+Two additional datasets represent a synthetic oncology submission
+(study ONCO-2025-001) with ADSL, ADRS, and ADTTE datasets.
+
+```{r oncology-meta}
+data(oncology_metadata)
+table(oncology_metadata$dataset)
+table(oncology_metadata$origin)
+```
+
+```{r oncology-ev}
+data(oncology_evidence)
+table(oncology_evidence$indicator_domain)
+table(oncology_evidence$result)
+```
+
+The oncology metadata includes `origin`, `derivation`, and `codelist` columns
+needed by `r4subusability::assess_define_completeness()` and
+`r4subusability::assess_annotation_coverage()`.

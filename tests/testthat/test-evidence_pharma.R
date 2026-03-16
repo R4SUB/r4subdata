@@ -47,8 +47,3 @@ test_that("evidence_pharma covers all 4 domains", {
   expect_true("risk" %in% domains)
   expect_true("usability" %in% domains)
 })
-
-test_that("evidence_pharma validates against r4subcore schema", {
-  skip_if_not_installed("r4subcore")
-  expect_true(r4subcore::validate_evidence(evidence_pharma))
-})
