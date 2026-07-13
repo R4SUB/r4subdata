@@ -5,6 +5,7 @@ R4SUB (R for Regulatory Submission) ecosystem. They are suitable for
 demos, vignettes, and package testing.
 
 ``` r
+
 library(r4subdata)
 ```
 
@@ -15,6 +16,7 @@ Use
 to see all datasets with descriptions:
 
 ``` r
+
 list_datasets()
 #> # A tibble: 8 × 4
 #>   name                  description                                n_rows n_cols
@@ -35,6 +37,7 @@ list_datasets()
 covering all four R4SUB pillars.
 
 ``` r
+
 data(evidence_pharma)
 dim(evidence_pharma)
 #> [1] 250  17
@@ -54,6 +57,7 @@ table(evidence_pharma$result)
 datasets: ADSL, ADAE, and ADLB.
 
 ``` r
+
 data(adam_metadata)
 table(adam_metadata$dataset)
 #> 
@@ -77,6 +81,7 @@ head(adam_metadata[, c("dataset", "variable", "label", "type")])
 LB.
 
 ``` r
+
 data(sdtm_metadata)
 table(sdtm_metadata$dataset)
 #> 
@@ -89,6 +94,7 @@ table(sdtm_metadata$dataset)
 `trace_mapping` links ADaM variables to their SDTM source variables.
 
 ``` r
+
 data(trace_mapping)
 head(trace_mapping)
 #> # A tibble: 6 × 6
@@ -108,6 +114,7 @@ head(trace_mapping)
 structured according to ICH Q9 principles.
 
 ``` r
+
 data(risk_register_pharma)
 table(risk_register_pharma$category)
 #> 
@@ -125,6 +132,7 @@ table(risk_register_pharma$status)
 across all four R4SUB domains.
 
 ``` r
+
 data(regulatory_indicators)
 table(regulatory_indicators$domain)
 #> 
@@ -138,6 +146,7 @@ Two additional datasets represent a synthetic oncology submission (study
 ONCO-2025-001) with ADSL, ADRS, and ADTTE datasets.
 
 ``` r
+
 data(oncology_metadata)
 table(oncology_metadata$dataset)
 #> 
@@ -150,6 +159,7 @@ table(oncology_metadata$origin)
 ```
 
 ``` r
+
 data(oncology_evidence)
 table(oncology_evidence$indicator_domain)
 #> 

@@ -7,29 +7,32 @@ package testing, like `nycflights13` or `palmerpenguins`.
 ## Installation
 
 ``` r
+
 install.packages("r4subdata")
 ```
 
 Development version:
 
 ``` r
+
 pak::pak("R4SUB/r4subdata")
 ```
 
 ## Datasets
 
-| Dataset                 | Rows | Description                                                  |
-|-------------------------|------|--------------------------------------------------------------|
-| `evidence_pharma`       | 250  | Full evidence table for study CDISCPILOT01 across 4 domains  |
-| `adam_metadata`         | 36   | ADaM variable metadata for ADSL, ADAE, ADLB                  |
-| `sdtm_metadata`         | 43   | SDTM variable metadata for DM, AE, LB                        |
-| `trace_mapping`         | 25   | ADaM-to-SDTM traceability mapping with confidence scores     |
-| `risk_register_pharma`  | 18   | FMEA risk register with P/I/D scores and mitigations         |
-| `regulatory_indicators` | 30   | Indicator definitions across quality, trace, risk, usability |
-| `oncology_metadata`     | 32   | ADaM variable metadata for ONCO-2025-001 (ADSL, ADRS, ADTTE) |
-| `oncology_evidence`     | 29   | Evidence table for ONCO-2025-001 across all 4 pillars        |
+| Dataset | Rows | Description |
+|----|----|----|
+| `evidence_pharma` | 250 | Full evidence table for study CDISCPILOT01 across 4 domains |
+| `adam_metadata` | 36 | ADaM variable metadata for ADSL, ADAE, ADLB |
+| `sdtm_metadata` | 43 | SDTM variable metadata for DM, AE, LB |
+| `trace_mapping` | 25 | ADaM-to-SDTM traceability mapping with confidence scores |
+| `risk_register_pharma` | 18 | FMEA risk register with P/I/D scores and mitigations |
+| `regulatory_indicators` | 30 | Indicator definitions across quality, trace, risk, usability |
+| `oncology_metadata` | 32 | ADaM variable metadata for ONCO-2025-001 (ADSL, ADRS, ADTTE) |
+| `oncology_evidence` | 29 | Evidence table for ONCO-2025-001 across all 4 pillars |
 
 ``` r
+
 library(r4subdata)
 list_datasets()
 ```
@@ -37,6 +40,7 @@ list_datasets()
 ## Quick Start
 
 ``` r
+
 library(r4subdata)
 
 # Explore available datasets
@@ -53,6 +57,7 @@ dataset_dictionary("evidence_pharma")
 ## Usage with R4SUB Packages
 
 ``` r
+
 library(r4subcore)
 library(r4subscore)
 library(r4subdata)

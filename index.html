@@ -7,12 +7,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>r4subdata — Example Datasets for R4SUB • r4subdata</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="r4subdata — Example Datasets for R4SUB">
-<meta name="description" content="Provides realistic synthetic example datasets for the R4SUB (R for Regulatory Submission) ecosystem. Includes a pharma study evidence table, ADaM (Analysis Data Model) and SDTM (Study Data Tabulation Model) metadata following CDISC (Clinical Data Interchange Standards Consortium) conventions (&lt;https://www.cdisc.org&gt;), traceability mappings, a risk register based on ICH (International Council for Harmonisation) Q9 quality risk management principles (&lt;https://www.ich.org/page/quality-guidelines&gt;), and regulatory indicator definitions. Designed for demos, vignettes, and package testing.">
-<meta property="og:description" content="Provides realistic synthetic example datasets for the R4SUB (R for Regulatory Submission) ecosystem. Includes a pharma study evidence table, ADaM (Analysis Data Model) and SDTM (Study Data Tabulation Model) metadata following CDISC (Clinical Data Interchange Standards Consortium) conventions (&lt;https://www.cdisc.org&gt;), traceability mappings, a risk register based on ICH (International Council for Harmonisation) Q9 quality risk management principles (&lt;https://www.ich.org/page/quality-guidelines&gt;), and regulatory indicator definitions. Designed for demos, vignettes, and package testing.">
+<meta name="description" content="Provides realistic synthetic example datasets for the R4SUB (Ready for Submission) ecosystem. Includes a pharma study evidence table, ADaM (Analysis Data Model) and SDTM (Study Data Tabulation Model) metadata following CDISC (Clinical Data Interchange Standards Consortium) conventions (&lt;https://www.cdisc.org&gt;), traceability mappings, a risk register based on ICH (International Council for Harmonisation) Q9 quality risk management principles (&lt;https://www.ich.org/page/quality-guidelines&gt;), and regulatory indicator definitions. Designed for demos, vignettes, and package testing.">
+<meta property="og:description" content="Provides realistic synthetic example datasets for the R4SUB (Ready for Submission) ecosystem. Includes a pharma study evidence table, ADaM (Analysis Data Model) and SDTM (Study Data Tabulation Model) metadata following CDISC (Clinical Data Interchange Standards Consortium) conventions (&lt;https://www.cdisc.org&gt;), traceability mappings, a risk register based on ICH (International Council for Harmonisation) Q9 quality risk management principles (&lt;https://www.ich.org/page/quality-guidelines&gt;), and regulatory indicator definitions. Designed for demos, vignettes, and package testing.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -76,48 +76,48 @@
 <col width="33%">
 <col width="33%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Dataset</th>
 <th>Rows</th>
 <th>Description</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><code>evidence_pharma</code></td>
 <td>250</td>
 <td>Full evidence table for study CDISCPILOT01 across 4 domains</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>adam_metadata</code></td>
 <td>36</td>
 <td>ADaM variable metadata for ADSL, ADAE, ADLB</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>sdtm_metadata</code></td>
 <td>43</td>
 <td>SDTM variable metadata for DM, AE, LB</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>trace_mapping</code></td>
 <td>25</td>
 <td>ADaM-to-SDTM traceability mapping with confidence scores</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>risk_register_pharma</code></td>
 <td>18</td>
 <td>FMEA risk register with P/I/D scores and mitigations</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>regulatory_indicators</code></td>
 <td>30</td>
 <td>Indicator definitions across quality, trace, risk, usability</td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>oncology_metadata</code></td>
 <td>32</td>
 <td>ADaM variable metadata for ONCO-2025-001 (ADSL, ADRS, ADTTE)</td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>oncology_evidence</code></td>
 <td>29</td>
 <td>Evidence table for ONCO-2025-001 across all 4 pillars</td>
@@ -148,7 +148,7 @@
 <h2 id="usage-with-r4sub-packages">Usage with R4SUB Packages<a class="anchor" aria-label="anchor" href="#usage-with-r4sub-packages"></a>
 </h2>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r4sub.github.io/r4subcore/" class="external-link">r4subcore</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/R4SUB/r4subcore" class="external-link">r4subcore</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/R4SUB/r4subscore" class="external-link">r4subscore</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r4sub.github.io/r4subdata/">r4subdata</a></span><span class="op">)</span></span>
 <span></span>
@@ -226,7 +226,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>
