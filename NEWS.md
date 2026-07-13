@@ -1,3 +1,9 @@
+# r4subdata (development version)
+
+- Clarified the package DESCRIPTION: "R4SUB" expands to "Ready for Submission"
+  (previously "R for Regulatory Submission", inconsistent with the rest of the
+  ecosystem).
+
 # r4subdata 0.1.2
 
 - Added `oncology_metadata`: ADaM variable-level metadata for a synthetic oncology trial (ADSL, ADRS, ADTTE).
