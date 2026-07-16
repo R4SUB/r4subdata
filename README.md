@@ -7,7 +7,7 @@
 [![r-universe](https://r4sub.r-universe.dev/badges/r4subdata)](https://r4sub.r-universe.dev/r4subdata)
 <!-- badges: end -->
 
-**r4subdata** provides realistic example datasets for the R4SUB clinical submission readiness ecosystem — designed for demos, vignettes, and package testing, like `nycflights13` or `palmerpenguins`.
+**r4subdata** provides realistic example datasets for the R4SUB clinical submission readiness ecosystem, designed for demos, vignettes, and package testing, like `nycflights13` or `palmerpenguins`.
 
 ## Installation
 
