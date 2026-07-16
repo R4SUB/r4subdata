@@ -1,7 +1,7 @@
 # r4subdata
 
 **r4subdata** provides realistic example datasets for the R4SUB clinical
-submission readiness ecosystem — designed for demos, vignettes, and
+submission readiness ecosystem, designed for demos, vignettes, and
 package testing, like `nycflights13` or `palmerpenguins`.
 
 ## Installation
