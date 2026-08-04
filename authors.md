@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/R4SUB/r4subdata/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/R4SUB/r4subdata/blob/v0.1.3/DESCRIPTION)
 
 Mali P (2026). *r4subdata: Example Datasets for Clinical Submission
 Readiness*. R package version 0.1.3,
