@@ -1,4 +1,4 @@
-# r4subdata (development version)
+# r4subdata 0.1.3
 
 - Clarified the package DESCRIPTION: "R4SUB" expands to "Ready for Submission"
   (previously "R for Regulatory Submission", inconsistent with the rest of the

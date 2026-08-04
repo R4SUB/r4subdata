@@ -1,6 +1,6 @@
 Package: r4subdata
 Title: Example Datasets for Clinical Submission Readiness
-Version: 0.1.2
+Version: 0.1.3
 Authors@R:
     person("Pawan Rama", "Mali", email = "prm@outlook.in",
            role = c("aut", "cre", "cph"),
