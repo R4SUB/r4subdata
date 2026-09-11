@@ -88,3 +88,8 @@ regulatory submissions. Maintainer: Pawan Rama Mali.
 ## License
 
 MIT
+
+## Further reading
+
+- [R4SUB articles on the TECHWORKSLAB
+  blog](https://techworkslab.com/insights)
