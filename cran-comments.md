@@ -1,6 +1,6 @@
 ## Submission
 
-This is a patch update of r4subdata from 0.1.1 (on CRAN) to 0.1.3. It clarifies
+This is a patch update of r4subdata from 0.1.1 (on CRAN) to 0.1.4. It clarifies
 the package DESCRIPTION wording ("R4SUB" expands to "Ready for Submission") and
 carries the example datasets used across the R4SUB ecosystem. No datasets or
 interfaces were removed or changed incompatibly. See NEWS.md.
