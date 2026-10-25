@@ -1,5 +1,10 @@
 # Changelog
 
+## r4subdata 0.1.4
+
+- Exclude the pkgdown config and site from the build to clear an R CMD
+  check NOTE.
+
 ## r4subdata 0.1.3
 
 - Clarified the package DESCRIPTION: “R4SUB” expands to “Ready for
