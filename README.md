@@ -33,6 +33,11 @@ pak::pak("R4SUB/r4subdata")
 | `regulatory_indicators` | 30 | Indicator definitions across quality, trace, risk, usability |
 | `oncology_metadata` | 32 | ADaM variable metadata for ONCO-2025-001 (ADSL, ADRS, ADTTE) |
 | `oncology_evidence` | 29 | Evidence table for ONCO-2025-001 across all 4 pillars |
+| `sdtm_metadata_oncology` | 38 | SDTM variable metadata for ONCO-2025-001 (DM, RS, TU) |
+| `trace_mapping_oncology` | 30 | ADaM-to-SDTM traceability mapping for ONCO-2025-001 with confidence scores |
+| `risk_register_oncology` | 15 | FMEA risk register for ONCO-2025-001 with P/I/D scores and mitigations |
+
+`list_datasets()` includes a `group` column tagging each dataset as `"pharma"` (CDISCPILOT01 / general reference) or `"oncology"` (ONCO-2025-001).
 
 ```r
 library(r4subdata)
