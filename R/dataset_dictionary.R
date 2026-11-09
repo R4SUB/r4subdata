@@ -16,7 +16,8 @@ dataset_dictionary <- function(dataset) {
   valid <- c(
     "evidence_pharma", "adam_metadata", "sdtm_metadata",
     "trace_mapping", "risk_register_pharma", "regulatory_indicators",
-    "oncology_metadata", "oncology_evidence", "risk_register_oncology"
+    "oncology_metadata", "oncology_evidence", "risk_register_oncology",
+    "sdtm_metadata_oncology", "trace_mapping_oncology"
   )
   if (!dataset %in% valid) {
     stop(
@@ -211,6 +212,34 @@ dataset_dictionary <- function(dataset) {
         "Risk owner name",
         "Mitigation action description",
         "Risk status: open, mitigated, closed, accepted"
+      )
+    ),
+    sdtm_metadata_oncology = tibble::tibble(
+      column = c("dataset", "variable", "label", "type", "length", "format"),
+      type = c("character", "character", "character", "character", "integer", "character"),
+      description = c(
+        "SDTM domain name (DM, RS, TU)",
+        "Variable name",
+        "Variable label",
+        "Variable type (Char or Num)",
+        "Variable length",
+        "SAS format"
+      )
+    ),
+    trace_mapping_oncology = tibble::tibble(
+      column = c(
+        "adam_dataset", "adam_var", "sdtm_domain", "sdtm_var",
+        "derivation_text", "confidence"
+      ),
+      type = c("character", "character", "character", "character",
+               "character", "numeric"),
+      description = c(
+        "Source ADaM dataset (ADSL, ADRS, ADTTE)",
+        "Source ADaM variable",
+        "Target SDTM domain (NA if derived)",
+        "Target SDTM variable (NA if derived)",
+        "Derivation description text",
+        "Mapping confidence score (0-1, NA if unmapped)"
       )
     )
   )

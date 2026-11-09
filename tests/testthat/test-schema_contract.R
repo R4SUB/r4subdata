@@ -25,7 +25,9 @@ schema_contract <- list(
   regulatory_indicators  = list(n_rows = 30L,  n_cols = 7L),
   oncology_metadata      = list(n_rows = 32L,  n_cols = 7L),
   oncology_evidence      = list(n_rows = 29L,  n_cols = 17L),
-  risk_register_oncology = list(n_rows = 15L,  n_cols = 9L)
+  risk_register_oncology = list(n_rows = 15L,  n_cols = 9L),
+  sdtm_metadata_oncology = list(n_rows = 38L,  n_cols = 6L),
+  trace_mapping_oncology = list(n_rows = 30L,  n_cols = 6L)
 )
 
 test_that("contract covers exactly the datasets in list_datasets()", {

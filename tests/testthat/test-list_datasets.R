@@ -3,9 +3,9 @@ test_that("list_datasets returns a tibble", {
   expect_s3_class(result, "tbl_df")
 })
 
-test_that("list_datasets has 9 rows", {
+test_that("list_datasets has 11 rows", {
   result <- list_datasets()
-  expect_equal(nrow(result), 9L)
+  expect_equal(nrow(result), 11L)
 })
 
 test_that("list_datasets has expected columns", {
@@ -19,7 +19,8 @@ test_that("list_datasets names match actual datasets", {
   expected <- c("evidence_pharma", "adam_metadata", "sdtm_metadata",
                 "trace_mapping", "risk_register_pharma", "regulatory_indicators",
                 "oncology_metadata", "oncology_evidence",
-                "risk_register_oncology")
+                "risk_register_oncology", "sdtm_metadata_oncology",
+                "trace_mapping_oncology")
   expect_equal(result$name, expected)
 })
 
