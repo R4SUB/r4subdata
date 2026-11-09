@@ -35,7 +35,7 @@ oncology_evidence
 }
 \description{
 A synthetic R4SUB evidence table for study ONCO-2025-001 covering all
-four R4SUB (R for Regulatory Submission) pillars (quality, trace, risk,
+four R4SUB (Ready for Submission) pillars (quality, trace, risk,
 usability) with 29 rows across ADSL, ADRS, and ADTTE datasets.
 Demonstrates realistic evidence patterns for an oncology submission
 with mixed pass/warn/fail results.

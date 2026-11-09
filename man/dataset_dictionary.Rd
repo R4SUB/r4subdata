@@ -18,5 +18,6 @@ Returns column names, types, and descriptions for a given r4subdata dataset.
 \examples{
 dataset_dictionary("evidence_pharma")
 dataset_dictionary("adam_metadata")
+dataset_dictionary("oncology_metadata")
 
 }

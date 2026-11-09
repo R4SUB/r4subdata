@@ -36,7 +36,7 @@ evidence_pharma
 \description{
 A realistic evidence table for study CDISCPILOT01 (Clinical Data
 Interchange Standards Consortium Pilot Study 01) covering all four
-R4SUB (R for Regulatory Submission) pillars (quality, trace, risk,
+R4SUB (Ready for Submission) pillars (quality, trace, risk,
 usability) with 250 rows and 18 indicators across multiple datasets
 and sources.
 }

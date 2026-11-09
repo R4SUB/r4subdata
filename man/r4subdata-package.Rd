@@ -6,11 +6,12 @@
 \alias{r4subdata-package}
 \title{r4subdata: Example Datasets for Clinical Submission Readiness}
 \description{
-Provides realistic synthetic example datasets for the R4SUB (R for Regulatory Submission) ecosystem. Includes a pharma study evidence table, ADaM (Analysis Data Model) and SDTM (Study Data Tabulation Model) metadata following CDISC (Clinical Data Interchange Standards Consortium) conventions (\url{https://www.cdisc.org}), traceability mappings, a risk register based on ICH (International Council for Harmonisation) Q9 quality risk management principles (\url{https://www.ich.org/page/quality-guidelines}), and regulatory indicator definitions. Designed for demos, vignettes, and package testing.
+Provides realistic synthetic example datasets for the R4SUB (Ready for Submission) ecosystem. Includes a pharma study evidence table, ADaM (Analysis Data Model) and SDTM (Study Data Tabulation Model) metadata following CDISC (Clinical Data Interchange Standards Consortium) conventions (\url{https://www.cdisc.org}), traceability mappings, a risk register based on ICH (International Council for Harmonisation) Q9 quality risk management principles (\url{https://www.ich.org/page/quality-guidelines}), and regulatory indicator definitions. Designed for demos, vignettes, and package testing.
 }
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://r4sub.github.io/r4subdata/}
   \item \url{https://github.com/R4SUB/r4subdata}
   \item Report bugs at \url{https://github.com/R4SUB/r4subdata/issues}
 }
@@ -18,6 +19,11 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: Pawan Rama Mali \email{prm@outlook.in} (\href{https://orcid.org/0000-0001-7864-5819}{ORCID}) [copyright holder]
+
+Authors:
+\itemize{
+  \item Pawan Rama Mali \email{prm@outlook.in} (\href{https://orcid.org/0000-0001-7864-5819}{ORCID}) [copyright holder]
+}
 
 }
 \keyword{internal}

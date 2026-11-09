@@ -17,7 +17,7 @@ A tibble with 30 rows and 7 columns:
 }
 }
 \source{
-Curated indicator definitions for the R4SUB (R for Regulatory
+Curated indicator definitions for the R4SUB (Ready for
 Submission) ecosystem.
 }
 \usage{
@@ -25,7 +25,7 @@ regulatory_indicators
 }
 \description{
 Reference table of 30 indicator definitions across all four R4SUB
-(R for Regulatory Submission) domains (quality, trace, risk, usability).
+(Ready for Submission) domains (quality, trace, risk, usability).
 Each indicator has a unique ID, default severity, typical source, and
 descriptive tags.
 }

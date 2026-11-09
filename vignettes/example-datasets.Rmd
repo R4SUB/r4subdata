@@ -12,7 +12,7 @@ knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 ```
 
 The `r4subdata` package provides synthetic example datasets for the
-R4SUB (R for Regulatory Submission) ecosystem. They are suitable for
+R4SUB (Ready for Submission) ecosystem. They are suitable for
 demos, vignettes, and package testing.
 
 ```{r load}

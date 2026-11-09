@@ -19,9 +19,24 @@ test_that("dataset_dictionary columns match actual dataset columns", {
 
 test_that("dataset_dictionary works for all datasets", {
   all_names <- c("evidence_pharma", "adam_metadata", "sdtm_metadata",
-                 "trace_mapping", "risk_register_pharma", "regulatory_indicators")
+                 "trace_mapping", "risk_register_pharma", "regulatory_indicators",
+                 "oncology_metadata", "oncology_evidence")
   for (nm in all_names) {
     result <- dataset_dictionary(nm)
     expect_s3_class(result, "tbl_df")
+  }
+})
+
+test_that("dataset_dictionary covers every dataset in list_datasets", {
+  for (nm in list_datasets()$name) {
+    result <- dataset_dictionary(nm)
+    expect_s3_class(result, "tbl_df")
+  }
+})
+
+test_that("dataset_dictionary columns match actual dataset columns", {
+  for (nm in c("oncology_metadata", "oncology_evidence")) {
+    result <- dataset_dictionary(nm)
+    expect_equal(result$column, names(get(nm)))
   }
 })
