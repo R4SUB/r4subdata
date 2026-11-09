@@ -1,5 +1,12 @@
 # r4subdata (development version)
 
+- Added `sdtm_metadata_oncology` and `trace_mapping_oncology`: synthetic SDTM
+  metadata (DM, RS, TU) and an ADaM-to-SDTM traceability mapping for the
+  oncology study ONCO-2025-001. They mirror the schemas of `sdtm_metadata` and
+  `trace_mapping`, are internally consistent with `oncology_metadata`, and
+  round-trip through `r4subtrace::build_trace_model()`. Both are documented,
+  covered by `dataset_dictionary()`, listed by `list_datasets()` (group
+  `"oncology"`), and guarded by the schema-contract test.
 - Added `risk_register_oncology`: a 15-row FMEA risk register for the synthetic
   oncology study ONCO-2025-001, mirroring the schema of `risk_register_pharma`.
   It is documented, covered by `dataset_dictionary()`, and listed by

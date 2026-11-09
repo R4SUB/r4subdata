@@ -259,3 +259,59 @@
 #' data(risk_register_oncology)
 #' table(risk_register_oncology$category)
 "risk_register_oncology"
+
+#' Oncology Trial SDTM Variable-Level Metadata
+#'
+#' SDTM (Study Data Tabulation Model) variable-level metadata for the synthetic
+#' oncology study ONCO-2025-001 (the same study described by `oncology_metadata`
+#' and `oncology_evidence`). Covers the oncology source domains DM
+#' (Demographics, 16 vars), RS (Disease Response following RECIST 1.1, 13 vars),
+#' and TU (Tumor Identification, 9 vars). Mirrors the schema of `sdtm_metadata`
+#' exactly and follows CDISC (Clinical Data Interchange Standards Consortium)
+#' SDTM conventions.
+#'
+#' @format A tibble with 38 rows and 6 columns:
+#' \describe{
+#'   \item{dataset}{Character. SDTM domain name (DM, RS, TU).}
+#'   \item{variable}{Character. Variable name.}
+#'   \item{label}{Character. Variable label.}
+#'   \item{type}{Character. Variable type (Char or Num).}
+#'   \item{length}{Integer. Variable length.}
+#'   \item{format}{Character. SAS (Statistical Analysis System) format (or NA).}
+#' }
+#'
+#' @source Synthetic metadata for a Phase II oncology trial following CDISC
+#'   (Clinical Data Interchange Standards Consortium) SDTM (Study Data
+#'   Tabulation Model) standards.
+#' @examples
+#' data(sdtm_metadata_oncology)
+#' table(sdtm_metadata_oncology$dataset)
+"sdtm_metadata_oncology"
+
+#' Oncology Trial ADaM-to-SDTM Traceability Mapping
+#'
+#' Maps the ADaM (Analysis Data Model) variables of the synthetic oncology study
+#' ONCO-2025-001 (ADSL, ADRS, ADTTE, as documented by `oncology_metadata`) to
+#' their SDTM (Study Data Tabulation Model) source variables in
+#' `sdtm_metadata_oncology`, with derivation text and confidence scores.
+#' Includes direct copies, derived variables, and unmapped (derived) entries.
+#' Mirrors the schema of `trace_mapping` exactly and is designed to round-trip
+#' through `r4subtrace::build_trace_model()`. Follows CDISC (Clinical Data
+#' Interchange Standards Consortium) traceability conventions.
+#'
+#' @format A tibble with 30 rows and 6 columns:
+#' \describe{
+#'   \item{adam_dataset}{Character. Source ADaM dataset (ADSL, ADRS, ADTTE).}
+#'   \item{adam_var}{Character. Source ADaM variable.}
+#'   \item{sdtm_domain}{Character. Target SDTM domain (NA if derived).}
+#'   \item{sdtm_var}{Character. Target SDTM variable (NA if derived).}
+#'   \item{derivation_text}{Character. Derivation description text.}
+#'   \item{confidence}{Numeric. Mapping confidence score (0-1, NA if unmapped).}
+#' }
+#'
+#' @source Synthetic traceability mapping for a Phase II oncology trial based on
+#'   CDISC (Clinical Data Interchange Standards Consortium) conventions.
+#' @examples
+#' data(trace_mapping_oncology)
+#' table(trace_mapping_oncology$adam_dataset)
+"trace_mapping_oncology"
