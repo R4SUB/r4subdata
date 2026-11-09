@@ -22,8 +22,8 @@ list_datasets <- function() {
     ),
     description = c(
       "Pharma study evidence table (CDISCPILOT01) with 250 rows across 4 domains",
-      "ADaM metadata for ADSL, ADAE, ADLB (30 variables)",
-      "SDTM metadata for DM, AE, LB (40 variables)",
+      "ADaM metadata for ADSL, ADAE, ADLB (36 variables)",
+      "SDTM metadata for DM, AE, LB (43 variables)",
       "ADaM-to-SDTM traceability mapping (25 mappings)",
       "FMEA risk register with 18 risks and mitigations",
       "Regulatory indicator definitions across 4 domains (30 indicators)",
