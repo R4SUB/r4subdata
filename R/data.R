@@ -2,7 +2,7 @@
 #'
 #' A realistic evidence table for study CDISCPILOT01 (Clinical Data
 #' Interchange Standards Consortium Pilot Study 01) covering all four
-#' R4SUB (R for Regulatory Submission) pillars (quality, trace, risk,
+#' R4SUB (Ready for Submission) pillars (quality, trace, risk,
 #' usability) with 250 rows and 18 indicators across multiple datasets
 #' and sources.
 #'
@@ -140,7 +140,7 @@
 #' Regulatory Indicator Definitions
 #'
 #' Reference table of 30 indicator definitions across all four R4SUB
-#' (R for Regulatory Submission) domains (quality, trace, risk, usability).
+#' (Ready for Submission) domains (quality, trace, risk, usability).
 #' Each indicator has a unique ID, default severity, typical source, and
 #' descriptive tags.
 #'
@@ -155,7 +155,7 @@
 #'   \item{tags}{Character. Comma-separated tags.}
 #' }
 #'
-#' @source Curated indicator definitions for the R4SUB (R for Regulatory
+#' @source Curated indicator definitions for the R4SUB (Ready for
 #'   Submission) ecosystem.
 #' @examples
 #' data(regulatory_indicators)
@@ -193,7 +193,7 @@
 #' Oncology Trial Evidence Table
 #'
 #' A synthetic R4SUB evidence table for study ONCO-2025-001 covering all
-#' four R4SUB (R for Regulatory Submission) pillars (quality, trace, risk,
+#' four R4SUB (Ready for Submission) pillars (quality, trace, risk,
 #' usability) with 29 rows across ADSL, ADRS, and ADTTE datasets.
 #' Demonstrates realistic evidence patterns for an oncology submission
 #' with mixed pass/warn/fail results.

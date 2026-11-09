@@ -9,12 +9,14 @@
 #' @examples
 #' dataset_dictionary("evidence_pharma")
 #' dataset_dictionary("adam_metadata")
+#' dataset_dictionary("oncology_metadata")
 #'
 #' @export
 dataset_dictionary <- function(dataset) {
   valid <- c(
     "evidence_pharma", "adam_metadata", "sdtm_metadata",
-    "trace_mapping", "risk_register_pharma", "regulatory_indicators"
+    "trace_mapping", "risk_register_pharma", "regulatory_indicators",
+    "oncology_metadata", "oncology_evidence"
   )
   if (!dataset %in% valid) {
     stop(
@@ -136,6 +138,58 @@ dataset_dictionary <- function(dataset) {
         "Default severity level for this indicator",
         "Typical source tool for this indicator",
         "Comma-separated tags for categorization"
+      )
+    ),
+    oncology_metadata = tibble::tibble(
+      column = c(
+        "dataset", "variable", "label", "origin", "derivation",
+        "codelist", "type"
+      ),
+      type = c(
+        "character", "character", "character", "character",
+        "character", "character", "character"
+      ),
+      description = c(
+        "ADaM dataset name (ADSL, ADRS, ADTTE)",
+        "Variable name",
+        "Variable label",
+        "Variable origin (CRF, Derived, Assigned)",
+        "Derivation text (NA if not derived)",
+        "CDISC codelist code (NA if not applicable)",
+        "Variable type (Char or Num)"
+      )
+    ),
+    oncology_evidence = tibble::tibble(
+      column = c(
+        "run_id", "study_id", "asset_type", "asset_id", "source_name",
+        "source_version", "indicator_id", "indicator_name", "indicator_domain",
+        "severity", "result", "metric_value", "metric_unit", "message",
+        "location", "evidence_payload", "created_at"
+      ),
+      type = c(
+        "character", "character", "character", "character", "character",
+        "character", "character", "character", "character",
+        "character", "character", "numeric", "character", "character",
+        "character", "character", "POSIXct"
+      ),
+      description = c(
+        "Unique run identifier",
+        "Study identifier (ONCO-2025-001)",
+        "Asset type: dataset, define, program, validation, spec, other",
+        "Asset identifier (e.g., ADSL, ADRS)",
+        "Source tool name",
+        "Version of the source tool",
+        "Indicator identifier (e.g., Q-MISS-VAR)",
+        "Human-readable indicator name",
+        "Indicator domain: quality, trace, risk, usability",
+        "Severity level: info, low, medium, high, critical",
+        "Check result: pass, fail, warn, na",
+        "Numeric metric value (if applicable)",
+        "Unit for metric_value",
+        "Descriptive message for the evidence row",
+        "Location reference (e.g., ADRS:AVAL)",
+        "JSON payload with additional details",
+        "Timestamp when evidence was created"
       )
     )
   )
