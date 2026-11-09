@@ -1,5 +1,13 @@
 # r4subdata (development version)
 
+- Added `risk_register_oncology`: a 15-row FMEA risk register for the synthetic
+  oncology study ONCO-2025-001, mirroring the schema of `risk_register_pharma`.
+  It is documented, covered by `dataset_dictionary()`, and listed by
+  `list_datasets()`.
+- `list_datasets()` now includes a `group` column tagging each dataset as
+  `"pharma"` or `"oncology"`.
+- Added a schema-contract test asserting that every documented dataset's
+  row/column counts and column types match the shipped data.
 - `dataset_dictionary()` now returns column dictionaries for `oncology_metadata`
   and `oncology_evidence`; previously these two datasets (exported and listed by
   `list_datasets()`) raised an "Unknown dataset" error.

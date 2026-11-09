@@ -7,7 +7,9 @@
 list_datasets()
 }
 \value{
-A tibble with columns: \code{name}, \code{description}, \code{n_rows}, \code{n_cols}.
+A tibble with columns: \code{name}, \code{group}, \code{description}, \code{n_rows},
+\code{n_cols}. The \code{group} column tags each dataset as \code{"pharma"}
+(CDISCPILOT01 / general reference) or \code{"oncology"} (ONCO-2025-001).
 }
 \description{
 Returns a summary of all datasets included in the r4subdata package.
