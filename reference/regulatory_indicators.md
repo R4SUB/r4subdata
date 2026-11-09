@@ -1,7 +1,7 @@
 # Regulatory Indicator Definitions
 
-Reference table of 30 indicator definitions across all four R4SUB (R for
-Regulatory Submission) domains (quality, trace, risk, usability). Each
+Reference table of 30 indicator definitions across all four R4SUB (Ready
+for Submission) domains (quality, trace, risk, usability). Each
 indicator has a unique ID, default severity, typical source, and
 descriptive tags.
 
@@ -45,8 +45,8 @@ A tibble with 30 rows and 7 columns:
 
 ## Source
 
-Curated indicator definitions for the R4SUB (R for Regulatory
-Submission) ecosystem.
+Curated indicator definitions for the R4SUB (Ready for Submission)
+ecosystem.
 
 ## Examples
 

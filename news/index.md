@@ -1,5 +1,20 @@
 # Changelog
 
+## r4subdata (development version)
+
+- [`dataset_dictionary()`](https://r4sub.github.io/r4subdata/reference/dataset_dictionary.md)
+  now returns column dictionaries for `oncology_metadata` and
+  `oncology_evidence`; previously these two datasets (exported and
+  listed by
+  [`list_datasets()`](https://r4sub.github.io/r4subdata/reference/list_datasets.md))
+  raised an “Unknown dataset” error.
+- Fixed stale “R for Regulatory Submission” expansions of “R4SUB” in the
+  dataset documentation and vignette to match the DESCRIPTION (“Ready
+  for Submission”).
+- Corrected the ADaM/SDTM variable counts shown by
+  [`list_datasets()`](https://r4sub.github.io/r4subdata/reference/list_datasets.md)
+  (36 and 43, matching the actual datasets).
+
 ## r4subdata 0.1.4
 
 - Exclude the pkgdown config and site from the build to clear an R CMD

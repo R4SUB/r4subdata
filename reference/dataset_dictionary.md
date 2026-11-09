@@ -53,4 +53,15 @@ dataset_dictionary("adam_metadata")
 #> 4 type     character Variable type (Char or Num)         
 #> 5 length   integer   Variable length                     
 #> 6 format   character SAS format                          
+dataset_dictionary("oncology_metadata")
+#> # A tibble: 7 × 3
+#>   column     type      description                               
+#>   <chr>      <chr>     <chr>                                     
+#> 1 dataset    character ADaM dataset name (ADSL, ADRS, ADTTE)     
+#> 2 variable   character Variable name                             
+#> 3 label      character Variable label                            
+#> 4 origin     character Variable origin (CRF, Derived, Assigned)  
+#> 5 derivation character Derivation text (NA if not derived)       
+#> 6 codelist   character CDISC codelist code (NA if not applicable)
+#> 7 type       character Variable type (Char or Num)               
 ```
