@@ -16,7 +16,7 @@ dataset_dictionary <- function(dataset) {
   valid <- c(
     "evidence_pharma", "adam_metadata", "sdtm_metadata",
     "trace_mapping", "risk_register_pharma", "regulatory_indicators",
-    "oncology_metadata", "oncology_evidence"
+    "oncology_metadata", "oncology_evidence", "risk_register_oncology"
   )
   if (!dataset %in% valid) {
     stop(
@@ -190,6 +190,27 @@ dataset_dictionary <- function(dataset) {
         "Location reference (e.g., ADRS:AVAL)",
         "JSON payload with additional details",
         "Timestamp when evidence was created"
+      )
+    ),
+    risk_register_oncology = tibble::tibble(
+      column = c(
+        "risk_id", "description", "category", "probability", "impact",
+        "detectability", "owner", "mitigation", "status"
+      ),
+      type = c(
+        "character", "character", "character", "integer", "integer",
+        "integer", "character", "character", "character"
+      ),
+      description = c(
+        "Unique risk identifier (ONCO-RISK-001 to ONCO-RISK-015)",
+        "Risk description",
+        "Risk category (data_quality, traceability, documentation, programming, compliance)",
+        "Probability of occurrence (1-5 FMEA scale)",
+        "Impact severity (1-5 FMEA scale)",
+        "Detectability rating (1=easy to detect, 5=hard to detect)",
+        "Risk owner name",
+        "Mitigation action description",
+        "Risk status: open, mitigated, closed, accepted"
       )
     )
   )

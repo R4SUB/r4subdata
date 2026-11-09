@@ -2,7 +2,9 @@
 #'
 #' Returns a summary of all datasets included in the r4subdata package.
 #'
-#' @return A tibble with columns: `name`, `description`, `n_rows`, `n_cols`.
+#' @return A tibble with columns: `name`, `group`, `description`, `n_rows`,
+#'   `n_cols`. The `group` column tags each dataset as `"pharma"`
+#'   (CDISCPILOT01 / general reference) or `"oncology"` (ONCO-2025-001).
 #'
 #' @examples
 #' list_datasets()
@@ -18,7 +20,19 @@ list_datasets <- function() {
       "risk_register_pharma",
       "regulatory_indicators",
       "oncology_metadata",
-      "oncology_evidence"
+      "oncology_evidence",
+      "risk_register_oncology"
+    ),
+    group = c(
+      "pharma",
+      "pharma",
+      "pharma",
+      "pharma",
+      "pharma",
+      "pharma",
+      "oncology",
+      "oncology",
+      "oncology"
     ),
     description = c(
       "Pharma study evidence table (CDISCPILOT01) with 250 rows across 4 domains",
@@ -28,7 +42,8 @@ list_datasets <- function() {
       "FMEA risk register with 18 risks and mitigations",
       "Regulatory indicator definitions across 4 domains (30 indicators)",
       "Oncology trial ADaM metadata for ADSL, ADRS, ADTTE (32 variables)",
-      "Oncology trial evidence table (ONCO-2025-001) with 29 rows across 4 domains"
+      "Oncology trial evidence table (ONCO-2025-001) with 29 rows across 4 domains",
+      "Oncology trial FMEA risk register (ONCO-2025-001) with 15 risks and mitigations"
     ),
     n_rows = c(
       nrow(r4subdata::evidence_pharma),
@@ -38,7 +53,8 @@ list_datasets <- function() {
       nrow(r4subdata::risk_register_pharma),
       nrow(r4subdata::regulatory_indicators),
       nrow(r4subdata::oncology_metadata),
-      nrow(r4subdata::oncology_evidence)
+      nrow(r4subdata::oncology_evidence),
+      nrow(r4subdata::risk_register_oncology)
     ),
     n_cols = c(
       ncol(r4subdata::evidence_pharma),
@@ -48,7 +64,8 @@ list_datasets <- function() {
       ncol(r4subdata::risk_register_pharma),
       ncol(r4subdata::regulatory_indicators),
       ncol(r4subdata::oncology_metadata),
-      ncol(r4subdata::oncology_evidence)
+      ncol(r4subdata::oncology_evidence),
+      ncol(r4subdata::risk_register_oncology)
     )
   )
 }
