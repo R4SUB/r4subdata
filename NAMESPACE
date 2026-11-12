@@ -2,4 +2,5 @@
 
 export(dataset_dictionary)
 export(list_datasets)
+export(validate_dataset)
 importFrom(tibble,tibble)
