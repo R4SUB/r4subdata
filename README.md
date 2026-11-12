@@ -58,7 +58,12 @@ table(evidence_pharma$indicator_domain)
 
 # Column dictionary
 dataset_dictionary("evidence_pharma")
+
+# Validate a data frame against a dataset's schema (columns + types)
+validate_dataset(adam_metadata, "adam_metadata")   # 0 issues = conforms
 ```
+
+`validate_dataset()` is a structural, non-inventive helper: it checks column names and types against `dataset_dictionary()` (or a custom dictionary), reporting missing columns, unexpected columns, type mismatches, and optional column-order differences. It imposes no regulatory values or thresholds.
 
 ## Usage with R4SUB Packages
 
