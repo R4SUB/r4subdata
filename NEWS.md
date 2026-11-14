@@ -1,5 +1,11 @@
 # r4subdata (development version)
 
+- Added `validate_dataset()`: a structural schema-validation helper that checks
+  a data frame against the column/type schema of a shipped dataset (as defined
+  by `dataset_dictionary()`) or against a custom dictionary of the same shape.
+  It reports missing columns, unexpected columns, type mismatches, and (in
+  strict mode) column-order differences, and carries a logical `valid`
+  attribute. It invents no regulatory values, thresholds, or code lists.
 - Added `sdtm_metadata_oncology` and `trace_mapping_oncology`: synthetic SDTM
   metadata (DM, RS, TU) and an ADaM-to-SDTM traceability mapping for the
   oncology study ONCO-2025-001. They mirror the schemas of `sdtm_metadata` and
