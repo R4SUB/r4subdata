@@ -315,3 +315,162 @@
 #' data(trace_mapping_oncology)
 #' table(trace_mapping_oncology$adam_dataset)
 "trace_mapping_oncology"
+
+#' CNS Trial Variable-Level Metadata
+#'
+#' ADaM (Analysis Data Model) variable-level metadata for a synthetic CNS
+#' (neuroscience) study, CNS-2025-001, modelled on a Phase II Alzheimer's
+#' disease trial. Covers ADSL (Subject-Level Analysis Dataset, 14 vars), ADQS
+#' (Questionnaire Analysis Dataset for cognitive/functional scales, 10 vars),
+#' and ADTTE (Time-to-Event Analysis Dataset, 8 vars). Mirrors the schema of
+#' `oncology_metadata` exactly (including the `origin`, `derivation`, and
+#' `codelist` columns) so the same downstream functions work unchanged.
+#'
+#' @format A tibble with 32 rows and 7 columns:
+#' \describe{
+#'   \item{dataset}{Character. ADaM dataset name (ADSL, ADQS, ADTTE).}
+#'   \item{variable}{Character. Variable name.}
+#'   \item{label}{Character. Variable label.}
+#'   \item{origin}{Character. Variable origin (CRF, Derived, Assigned).}
+#'   \item{derivation}{Character. Derivation text (NA if not derived).}
+#'   \item{codelist}{Character. CDISC (Clinical Data Interchange Standards
+#'     Consortium) codelist code (NA if not applicable).}
+#'   \item{type}{Character. Variable type (Char or Num).}
+#' }
+#'
+#' @source Synthetic metadata for a Phase II CNS (Alzheimer's disease) trial
+#'   following CDISC (Clinical Data Interchange Standards Consortium) ADaM
+#'   conventions.
+#' @examples
+#' data(cns_metadata)
+#' table(cns_metadata$dataset)
+#' table(cns_metadata$origin)
+"cns_metadata"
+
+#' CNS Trial Evidence Table
+#'
+#' A synthetic R4SUB evidence table for study CNS-2025-001 (the synthetic CNS
+#' study described by `cns_metadata`) covering all four R4SUB (Ready for
+#' Submission) pillars (quality, trace, risk, usability) with 29 rows across
+#' ADSL, ADQS, and ADTTE datasets. Mirrors the schema of `oncology_evidence`
+#' exactly and demonstrates realistic evidence patterns for a CNS submission
+#' with mixed pass/warn/fail results.
+#'
+#' @format A tibble with 29 rows and 17 columns:
+#' \describe{
+#'   \item{run_id}{Character. Unique run identifier.}
+#'   \item{study_id}{Character. Study identifier (CNS-2025-001).}
+#'   \item{asset_type}{Character. Asset type: dataset, define, program,
+#'     validation, spec, other.}
+#'   \item{asset_id}{Character. Asset identifier (e.g., ADSL, ADQS).}
+#'   \item{source_name}{Character. Source tool name.}
+#'   \item{source_version}{Character. Version of the source tool.}
+#'   \item{indicator_id}{Character. Indicator identifier (e.g., Q-MISS-VAR).}
+#'   \item{indicator_name}{Character. Human-readable indicator name.}
+#'   \item{indicator_domain}{Character. Domain: quality, trace, risk, usability.}
+#'   \item{severity}{Character. Severity: info, low, medium, high, critical.}
+#'   \item{result}{Character. Result: pass, fail, warn, na.}
+#'   \item{metric_value}{Numeric. Metric value (if applicable).}
+#'   \item{metric_unit}{Character. Unit for metric_value.}
+#'   \item{message}{Character. Descriptive message.}
+#'   \item{location}{Character. Location reference (e.g., ADQS:AVAL).}
+#'   \item{evidence_payload}{Character. JSON payload with additional details.}
+#'   \item{created_at}{POSIXct. Timestamp when evidence was created.}
+#' }
+#'
+#' @source Synthetic evidence data for a Phase II CNS (Alzheimer's disease)
+#'   trial.
+#' @examples
+#' data(cns_evidence)
+#' table(cns_evidence$indicator_domain)
+#' table(cns_evidence$result)
+"cns_evidence"
+
+#' CNS Trial Risk Register
+#'
+#' A Failure Mode and Effects Analysis (FMEA)-based risk register for the
+#' synthetic CNS study CNS-2025-001 (the same study described by `cns_metadata`
+#' and `cns_evidence`). Contains 15 risks covering data quality, traceability,
+#' documentation, programming, and compliance categories, with probability,
+#' impact, and detectability scores on a 1-5 scale. Mirrors the schema of
+#' `risk_register_pharma` exactly and reflects realistic CNS submission risks
+#' (cognitive-scale endpoints, time-to-progression, and program validation).
+#' Structured according to ICH (International Council for Harmonisation) Q9
+#' quality risk management principles.
+#'
+#' @format A tibble with 15 rows and 9 columns:
+#' \describe{
+#'   \item{risk_id}{Character. Unique risk identifier (CNS-RISK-001 to CNS-RISK-015).}
+#'   \item{description}{Character. Risk description.}
+#'   \item{category}{Character. Risk category.}
+#'   \item{probability}{Integer. Probability of occurrence (1-5).}
+#'   \item{impact}{Integer. Impact severity (1-5).}
+#'   \item{detectability}{Integer. Detectability rating (1-5).}
+#'   \item{owner}{Character. Risk owner name.}
+#'   \item{mitigation}{Character. Mitigation action (or NA).}
+#'   \item{status}{Character. Status: open, mitigated, closed, accepted.}
+#' }
+#'
+#' @source Synthetic risk register for a Phase II CNS (Alzheimer's disease)
+#'   trial, based on ICH (International Council for Harmonisation) Q9 quality
+#'   risk management principles.
+#' @examples
+#' data(risk_register_cns)
+#' table(risk_register_cns$category)
+"risk_register_cns"
+
+#' CNS Trial SDTM Variable-Level Metadata
+#'
+#' SDTM (Study Data Tabulation Model) variable-level metadata for the synthetic
+#' CNS study CNS-2025-001 (the same study described by `cns_metadata` and
+#' `cns_evidence`). Covers the CNS source domains DM (Demographics, 16 vars),
+#' QS (Questionnaires, 14 vars), and SC (Subject Characteristics, 8 vars).
+#' Mirrors the schema of `sdtm_metadata` exactly and follows CDISC (Clinical
+#' Data Interchange Standards Consortium) SDTM conventions.
+#'
+#' @format A tibble with 38 rows and 6 columns:
+#' \describe{
+#'   \item{dataset}{Character. SDTM domain name (DM, QS, SC).}
+#'   \item{variable}{Character. Variable name.}
+#'   \item{label}{Character. Variable label.}
+#'   \item{type}{Character. Variable type (Char or Num).}
+#'   \item{length}{Integer. Variable length.}
+#'   \item{format}{Character. SAS (Statistical Analysis System) format (or NA).}
+#' }
+#'
+#' @source Synthetic metadata for a Phase II CNS (Alzheimer's disease) trial
+#'   following CDISC (Clinical Data Interchange Standards Consortium) SDTM
+#'   (Study Data Tabulation Model) standards.
+#' @examples
+#' data(sdtm_metadata_cns)
+#' table(sdtm_metadata_cns$dataset)
+"sdtm_metadata_cns"
+
+#' CNS Trial ADaM-to-SDTM Traceability Mapping
+#'
+#' Maps the ADaM (Analysis Data Model) variables of the synthetic CNS study
+#' CNS-2025-001 (ADSL, ADQS, ADTTE, as documented by `cns_metadata`) to their
+#' SDTM (Study Data Tabulation Model) source variables in `sdtm_metadata_cns`,
+#' with derivation text and confidence scores. Includes direct copies, derived
+#' variables, and unmapped (derived) entries. Mirrors the schema of
+#' `trace_mapping` exactly and is designed to round-trip through
+#' `r4subtrace::build_trace_model()`. Follows CDISC (Clinical Data Interchange
+#' Standards Consortium) traceability conventions.
+#'
+#' @format A tibble with 30 rows and 6 columns:
+#' \describe{
+#'   \item{adam_dataset}{Character. Source ADaM dataset (ADSL, ADQS, ADTTE).}
+#'   \item{adam_var}{Character. Source ADaM variable.}
+#'   \item{sdtm_domain}{Character. Target SDTM domain (NA if derived).}
+#'   \item{sdtm_var}{Character. Target SDTM variable (NA if derived).}
+#'   \item{derivation_text}{Character. Derivation description text.}
+#'   \item{confidence}{Numeric. Mapping confidence score (0-1, NA if unmapped).}
+#' }
+#'
+#' @source Synthetic traceability mapping for a Phase II CNS (Alzheimer's
+#'   disease) trial based on CDISC (Clinical Data Interchange Standards
+#'   Consortium) conventions.
+#' @examples
+#' data(trace_mapping_cns)
+#' table(trace_mapping_cns$adam_dataset)
+"trace_mapping_cns"

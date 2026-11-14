@@ -4,7 +4,8 @@
 #'
 #' @return A tibble with columns: `name`, `group`, `description`, `n_rows`,
 #'   `n_cols`. The `group` column tags each dataset as `"pharma"`
-#'   (CDISCPILOT01 / general reference) or `"oncology"` (ONCO-2025-001).
+#'   (CDISCPILOT01 / general reference), `"oncology"` (ONCO-2025-001), or
+#'   `"cns"` (CNS-2025-001).
 #'
 #' @examples
 #' list_datasets()
@@ -23,7 +24,12 @@ list_datasets <- function() {
       "oncology_evidence",
       "risk_register_oncology",
       "sdtm_metadata_oncology",
-      "trace_mapping_oncology"
+      "trace_mapping_oncology",
+      "cns_metadata",
+      "cns_evidence",
+      "risk_register_cns",
+      "sdtm_metadata_cns",
+      "trace_mapping_cns"
     ),
     group = c(
       "pharma",
@@ -36,7 +42,12 @@ list_datasets <- function() {
       "oncology",
       "oncology",
       "oncology",
-      "oncology"
+      "oncology",
+      "cns",
+      "cns",
+      "cns",
+      "cns",
+      "cns"
     ),
     description = c(
       "Pharma study evidence table (CDISCPILOT01) with 250 rows across 4 domains",
@@ -49,7 +60,12 @@ list_datasets <- function() {
       "Oncology trial evidence table (ONCO-2025-001) with 29 rows across 4 domains",
       "Oncology trial FMEA risk register (ONCO-2025-001) with 15 risks and mitigations",
       "Oncology trial SDTM metadata for DM, RS, TU (38 variables)",
-      "Oncology trial ADaM-to-SDTM traceability mapping (30 mappings)"
+      "Oncology trial ADaM-to-SDTM traceability mapping (30 mappings)",
+      "CNS trial ADaM metadata for CNS-2025-001 (ADSL, ADQS, ADTTE; 32 variables)",
+      "CNS trial evidence table (CNS-2025-001) with 29 rows across 4 domains",
+      "CNS trial FMEA risk register (CNS-2025-001) with 15 risks and mitigations",
+      "CNS trial SDTM metadata for DM, QS, SC (38 variables)",
+      "CNS trial ADaM-to-SDTM traceability mapping (30 mappings)"
     ),
     n_rows = c(
       nrow(r4subdata::evidence_pharma),
@@ -62,7 +78,12 @@ list_datasets <- function() {
       nrow(r4subdata::oncology_evidence),
       nrow(r4subdata::risk_register_oncology),
       nrow(r4subdata::sdtm_metadata_oncology),
-      nrow(r4subdata::trace_mapping_oncology)
+      nrow(r4subdata::trace_mapping_oncology),
+      nrow(r4subdata::cns_metadata),
+      nrow(r4subdata::cns_evidence),
+      nrow(r4subdata::risk_register_cns),
+      nrow(r4subdata::sdtm_metadata_cns),
+      nrow(r4subdata::trace_mapping_cns)
     ),
     n_cols = c(
       ncol(r4subdata::evidence_pharma),
@@ -75,7 +96,12 @@ list_datasets <- function() {
       ncol(r4subdata::oncology_evidence),
       ncol(r4subdata::risk_register_oncology),
       ncol(r4subdata::sdtm_metadata_oncology),
-      ncol(r4subdata::trace_mapping_oncology)
+      ncol(r4subdata::trace_mapping_oncology),
+      ncol(r4subdata::cns_metadata),
+      ncol(r4subdata::cns_evidence),
+      ncol(r4subdata::risk_register_cns),
+      ncol(r4subdata::sdtm_metadata_cns),
+      ncol(r4subdata::trace_mapping_cns)
     )
   )
 }

@@ -91,8 +91,10 @@ table(regulatory_indicators$domain)
 
 ## Oncology trial datasets
 
-Two additional datasets represent a synthetic oncology submission
-(study ONCO-2025-001) with ADSL, ADRS, and ADTTE datasets.
+A bundle of datasets represents a synthetic oncology submission
+(study ONCO-2025-001) with ADSL, ADRS, and ADTTE datasets:
+`oncology_metadata`, `oncology_evidence`, `sdtm_metadata_oncology`,
+`trace_mapping_oncology`, and `risk_register_oncology`.
 
 ```{r oncology-meta}
 data(oncology_metadata)
@@ -109,3 +111,33 @@ table(oncology_evidence$result)
 The oncology metadata includes `origin`, `derivation`, and `codelist` columns
 needed by `r4subusability::assess_define_completeness()` and
 `r4subusability::assess_annotation_coverage()`.
+
+## CNS trial datasets
+
+A second therapeutic-area bundle represents a synthetic CNS (neuroscience)
+submission (study CNS-2025-001, modelled on a Phase II Alzheimer's disease
+trial) with ADSL, ADQS, and ADTTE datasets. Each object mirrors the
+column/type contract of its oncology counterpart exactly, so the same
+downstream functions work unchanged: `cns_metadata`, `cns_evidence`,
+`sdtm_metadata_cns`, `trace_mapping_cns`, and `risk_register_cns`.
+
+```{r cns-meta}
+data(cns_metadata)
+table(cns_metadata$dataset)
+table(cns_metadata$origin)
+```
+
+```{r cns-ev}
+data(cns_evidence)
+table(cns_evidence$indicator_domain)
+table(cns_evidence$result)
+```
+
+The CNS traceability mapping references only ADaM variables present in
+`cns_metadata` and SDTM variables present in `sdtm_metadata_cns`, so it
+round-trips through `r4subtrace::build_trace_model()` cleanly.
+
+```{r cns-trace}
+data(trace_mapping_cns)
+table(trace_mapping_cns$adam_dataset)
+```

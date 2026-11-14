@@ -36,8 +36,13 @@ pak::pak("R4SUB/r4subdata")
 | `sdtm_metadata_oncology` | 38 | SDTM variable metadata for ONCO-2025-001 (DM, RS, TU) |
 | `trace_mapping_oncology` | 30 | ADaM-to-SDTM traceability mapping for ONCO-2025-001 with confidence scores |
 | `risk_register_oncology` | 15 | FMEA risk register for ONCO-2025-001 with P/I/D scores and mitigations |
+| `cns_metadata` | 32 | CNS trial ADaM variable metadata for CNS-2025-001 (ADSL, ADQS, ADTTE) |
+| `cns_evidence` | 29 | Evidence table for CNS-2025-001 across all 4 pillars |
+| `sdtm_metadata_cns` | 38 | SDTM variable metadata for CNS-2025-001 (DM, QS, SC) |
+| `trace_mapping_cns` | 30 | ADaM-to-SDTM traceability mapping for CNS-2025-001 with confidence scores |
+| `risk_register_cns` | 15 | FMEA risk register for CNS-2025-001 with P/I/D scores and mitigations |
 
-`list_datasets()` includes a `group` column tagging each dataset as `"pharma"` (CDISCPILOT01 / general reference) or `"oncology"` (ONCO-2025-001).
+`list_datasets()` includes a `group` column tagging each dataset as `"pharma"` (CDISCPILOT01 / general reference), `"oncology"` (ONCO-2025-001), or `"cns"` (CNS-2025-001, a synthetic Alzheimer's disease study).
 
 ```r
 library(r4subdata)
@@ -87,6 +92,10 @@ rr <- create_risk_register(risk_register_pharma)
 
 # Oncology study
 scores_onco <- compute_indicator_scores(oncology_evidence)
+
+# CNS (neuroscience) study
+scores_cns  <- compute_indicator_scores(cns_evidence)
+model_cns   <- build_trace_model(cns_metadata, sdtm_metadata_cns, trace_mapping_cns)
 ```
 
 ## Maintained by
