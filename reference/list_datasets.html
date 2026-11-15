@@ -48,23 +48,33 @@
 
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A tibble with columns: <code>name</code>, <code>description</code>, <code>n_rows</code>, <code>n_cols</code>.</p>
+    <p>A tibble with columns: <code>name</code>, <code>group</code>, <code>description</code>, <code>n_rows</code>,
+<code>n_cols</code>. The <code>group</code> column tags each dataset as <code>"pharma"</code>
+(CDISCPILOT01 / general reference) or <code>"oncology"</code> (ONCO-2025-001).</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">list_datasets</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 8 × 4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   name                  description                                n_rows n_cols</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                       <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> evidence_pharma       Pharma study evidence table (CDISCPILOT01…    250     17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> adam_metadata         ADaM metadata for ADSL, ADAE, ADLB (36 va…     36      6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> sdtm_metadata         SDTM metadata for DM, AE, LB (43 variable…     43      6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> trace_mapping         ADaM-to-SDTM traceability mapping (25 map…     25      6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> risk_register_pharma  FMEA risk register with 18 risks and miti…     18      9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> regulatory_indicators Regulatory indicator definitions across 4…     30      7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> oncology_metadata     Oncology trial ADaM metadata for ADSL, AD…     32      7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span> oncology_evidence     Oncology trial evidence table (ONCO-2025-…     29     17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 16 × 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    name                   group    description                     n_rows n_cols</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                            <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> evidence_pharma        pharma   Pharma study evidence table (C…    250     17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> adam_metadata          pharma   ADaM metadata for ADSL, ADAE, …     36      6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> sdtm_metadata          pharma   SDTM metadata for DM, AE, LB (…     43      6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> trace_mapping          pharma   ADaM-to-SDTM traceability mapp…     25      6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> risk_register_pharma   pharma   FMEA risk register with 18 ris…     18      9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> regulatory_indicators  pharma   Regulatory indicator definitio…     30      7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> oncology_metadata      oncology Oncology trial ADaM metadata f…     32      7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> oncology_evidence      oncology Oncology trial evidence table …     29     17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> risk_register_oncology oncology Oncology trial FMEA risk regis…     15      9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> sdtm_metadata_oncology oncology Oncology trial SDTM metadata f…     38      6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> trace_mapping_oncology oncology Oncology trial ADaM-to-SDTM tr…     30      6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> cns_metadata           cns      CNS trial ADaM metadata for CN…     32      7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> cns_evidence           cns      CNS trial evidence table (CNS-…     29     17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> risk_register_cns      cns      CNS trial FMEA risk register (…     15      9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> sdtm_metadata_cns      cns      CNS trial SDTM metadata for DM…     38      6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> trace_mapping_cns      cns      CNS trial ADaM-to-SDTM traceab…     30      6</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

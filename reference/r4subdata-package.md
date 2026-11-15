@@ -25,8 +25,3 @@ Useful links:
 
 **Maintainer**: Pawan Rama Mali <prm@outlook.in>
 ([ORCID](https://orcid.org/0000-0001-7864-5819)) \[copyright holder\]
-
-Authors:
-
-- Pawan Rama Mali <prm@outlook.in>
-  ([ORCID](https://orcid.org/0000-0001-7864-5819)) \[copyright holder\]

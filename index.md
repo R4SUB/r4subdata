@@ -30,6 +30,19 @@ pak::pak("R4SUB/r4subdata")
 | `regulatory_indicators` | 30 | Indicator definitions across quality, trace, risk, usability |
 | `oncology_metadata` | 32 | ADaM variable metadata for ONCO-2025-001 (ADSL, ADRS, ADTTE) |
 | `oncology_evidence` | 29 | Evidence table for ONCO-2025-001 across all 4 pillars |
+| `sdtm_metadata_oncology` | 38 | SDTM variable metadata for ONCO-2025-001 (DM, RS, TU) |
+| `trace_mapping_oncology` | 30 | ADaM-to-SDTM traceability mapping for ONCO-2025-001 with confidence scores |
+| `risk_register_oncology` | 15 | FMEA risk register for ONCO-2025-001 with P/I/D scores and mitigations |
+| `cns_metadata` | 32 | CNS trial ADaM variable metadata for CNS-2025-001 (ADSL, ADQS, ADTTE) |
+| `cns_evidence` | 29 | Evidence table for CNS-2025-001 across all 4 pillars |
+| `sdtm_metadata_cns` | 38 | SDTM variable metadata for CNS-2025-001 (DM, QS, SC) |
+| `trace_mapping_cns` | 30 | ADaM-to-SDTM traceability mapping for CNS-2025-001 with confidence scores |
+| `risk_register_cns` | 15 | FMEA risk register for CNS-2025-001 with P/I/D scores and mitigations |
+
+[`list_datasets()`](https://r4sub.github.io/r4subdata/reference/list_datasets.md)
+includes a `group` column tagging each dataset as `"pharma"`
+(CDISCPILOT01 / general reference), `"oncology"` (ONCO-2025-001), or
+`"cns"` (CNS-2025-001, a synthetic Alzheimer’s disease study).
 
 ``` r
 
@@ -52,7 +65,18 @@ table(evidence_pharma$indicator_domain)
 
 # Column dictionary
 dataset_dictionary("evidence_pharma")
+
+# Validate a data frame against a dataset's schema (columns + types)
+validate_dataset(adam_metadata, "adam_metadata")   # 0 issues = conforms
 ```
+
+[`validate_dataset()`](https://r4sub.github.io/r4subdata/reference/validate_dataset.md)
+is a structural, non-inventive helper: it checks column names and types
+against
+[`dataset_dictionary()`](https://r4sub.github.io/r4subdata/reference/dataset_dictionary.md)
+(or a custom dictionary), reporting missing columns, unexpected columns,
+type mismatches, and optional column-order differences. It imposes no
+regulatory values or thresholds.
 
 ## Usage with R4SUB Packages
 
@@ -77,6 +101,10 @@ rr <- create_risk_register(risk_register_pharma)
 
 # Oncology study
 scores_onco <- compute_indicator_scores(oncology_evidence)
+
+# CNS (neuroscience) study
+scores_cns  <- compute_indicator_scores(cns_evidence)
+model_cns   <- build_trace_model(cns_metadata, sdtm_metadata_cns, trace_mapping_cns)
 ```
 
 ## Maintained by

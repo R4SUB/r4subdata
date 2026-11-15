@@ -121,8 +121,49 @@
 <td>29</td>
 <td>Evidence table for ONCO-2025-001 across all 4 pillars</td>
 </tr>
+<tr>
+<td><code>sdtm_metadata_oncology</code></td>
+<td>38</td>
+<td>SDTM variable metadata for ONCO-2025-001 (DM, RS, TU)</td>
+</tr>
+<tr>
+<td><code>trace_mapping_oncology</code></td>
+<td>30</td>
+<td>ADaM-to-SDTM traceability mapping for ONCO-2025-001 with confidence scores</td>
+</tr>
+<tr>
+<td><code>risk_register_oncology</code></td>
+<td>15</td>
+<td>FMEA risk register for ONCO-2025-001 with P/I/D scores and mitigations</td>
+</tr>
+<tr>
+<td><code>cns_metadata</code></td>
+<td>32</td>
+<td>CNS trial ADaM variable metadata for CNS-2025-001 (ADSL, ADQS, ADTTE)</td>
+</tr>
+<tr>
+<td><code>cns_evidence</code></td>
+<td>29</td>
+<td>Evidence table for CNS-2025-001 across all 4 pillars</td>
+</tr>
+<tr>
+<td><code>sdtm_metadata_cns</code></td>
+<td>38</td>
+<td>SDTM variable metadata for CNS-2025-001 (DM, QS, SC)</td>
+</tr>
+<tr>
+<td><code>trace_mapping_cns</code></td>
+<td>30</td>
+<td>ADaM-to-SDTM traceability mapping for CNS-2025-001 with confidence scores</td>
+</tr>
+<tr>
+<td><code>risk_register_cns</code></td>
+<td>15</td>
+<td>FMEA risk register for CNS-2025-001 with P/I/D scores and mitigations</td>
+</tr>
 </tbody>
 </table>
+<p><code><a href="reference/list_datasets.html">list_datasets()</a></code> includes a <code>group</code> column tagging each dataset as <code>"pharma"</code> (CDISCPILOT01 / general reference), <code>"oncology"</code> (ONCO-2025-001), or <code>"cns"</code> (CNS-2025-001, a synthetic Alzheimer’s disease study).</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r4sub.github.io/r4subdata/">r4subdata</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/list_datasets.html">list_datasets</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -141,7 +182,11 @@
 <span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">evidence_pharma</span><span class="op">$</span><span class="va">indicator_domain</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Column dictionary</span></span>
-<span><span class="fu"><a href="reference/dataset_dictionary.html">dataset_dictionary</a></span><span class="op">(</span><span class="st">"evidence_pharma"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="reference/dataset_dictionary.html">dataset_dictionary</a></span><span class="op">(</span><span class="st">"evidence_pharma"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Validate a data frame against a dataset's schema (columns + types)</span></span>
+<span><span class="fu"><a href="reference/validate_dataset.html">validate_dataset</a></span><span class="op">(</span><span class="va">adam_metadata</span>, <span class="st">"adam_metadata"</span><span class="op">)</span>   <span class="co"># 0 issues = conforms</span></span></code></pre></div>
+<p><code><a href="reference/validate_dataset.html">validate_dataset()</a></code> is a structural, non-inventive helper: it checks column names and types against <code><a href="reference/dataset_dictionary.html">dataset_dictionary()</a></code> (or a custom dictionary), reporting missing columns, unexpected columns, type mismatches, and optional column-order differences. It imposes no regulatory values or thresholds.</p>
 </div>
 <div class="section level2">
 <h2 id="usage-with-r4sub-packages">Usage with R4SUB Packages<a class="anchor" aria-label="anchor" href="#usage-with-r4sub-packages"></a>
@@ -165,7 +210,11 @@
 <span><span class="va">rr</span> <span class="op">&lt;-</span> <span class="fu">create_risk_register</span><span class="op">(</span><span class="va">risk_register_pharma</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Oncology study</span></span>
-<span><span class="va">scores_onco</span> <span class="op">&lt;-</span> <span class="fu">compute_indicator_scores</span><span class="op">(</span><span class="va">oncology_evidence</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">scores_onco</span> <span class="op">&lt;-</span> <span class="fu">compute_indicator_scores</span><span class="op">(</span><span class="va">oncology_evidence</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># CNS (neuroscience) study</span></span>
+<span><span class="va">scores_cns</span>  <span class="op">&lt;-</span> <span class="fu">compute_indicator_scores</span><span class="op">(</span><span class="va">cns_evidence</span><span class="op">)</span></span>
+<span><span class="va">model_cns</span>   <span class="op">&lt;-</span> <span class="fu">build_trace_model</span><span class="op">(</span><span class="va">cns_metadata</span>, <span class="va">sdtm_metadata_cns</span>, <span class="va">trace_mapping_cns</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="maintained-by">Maintained by<a class="anchor" aria-label="anchor" href="#maintained-by"></a>

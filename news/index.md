@@ -2,6 +2,56 @@
 
 ## r4subdata (development version)
 
+- Added a second synthetic therapeutic-area example bundle for the CNS
+  (neuroscience) study `CNS-2025-001`, modelled on a Phase II
+  Alzheimer’s disease trial, so users can demo the full ecosystem on a
+  second study: `cns_metadata` (ADaM metadata for ADSL, ADQS, ADTTE),
+  `cns_evidence` (29-row evidence table across all four pillars),
+  `risk_register_cns` (15-row FMEA register), `sdtm_metadata_cns` (SDTM
+  metadata for DM, QS, SC), and `trace_mapping_cns` (ADaM-to-SDTM
+  mapping). Each object mirrors the column/type contract of its oncology
+  counterpart exactly; the bundle is internally consistent (IDs line up
+  across the trace mapping) and round-trips through
+  `r4subtrace::build_trace_model()`. All values are synthetic and no
+  regulatory reference values are invented. The datasets are documented,
+  covered by
+  [`dataset_dictionary()`](https://r4sub.github.io/r4subdata/reference/dataset_dictionary.md),
+  listed by
+  [`list_datasets()`](https://r4sub.github.io/r4subdata/reference/list_datasets.md)
+  (group `"cns"`), and guarded by the schema-contract and per-dataset
+  tests.
+- [`list_datasets()`](https://r4sub.github.io/r4subdata/reference/list_datasets.md)
+  `group` column now also tags datasets as `"cns"` (CNS-2025-001).
+- Added
+  [`validate_dataset()`](https://r4sub.github.io/r4subdata/reference/validate_dataset.md):
+  a structural schema-validation helper that checks a data frame against
+  the column/type schema of a shipped dataset (as defined by
+  [`dataset_dictionary()`](https://r4sub.github.io/r4subdata/reference/dataset_dictionary.md))
+  or against a custom dictionary of the same shape. It reports missing
+  columns, unexpected columns, type mismatches, and (in strict mode)
+  column-order differences, and carries a logical `valid` attribute. It
+  invents no regulatory values, thresholds, or code lists.
+- Added `sdtm_metadata_oncology` and `trace_mapping_oncology`: synthetic
+  SDTM metadata (DM, RS, TU) and an ADaM-to-SDTM traceability mapping
+  for the oncology study ONCO-2025-001. They mirror the schemas of
+  `sdtm_metadata` and `trace_mapping`, are internally consistent with
+  `oncology_metadata`, and round-trip through
+  `r4subtrace::build_trace_model()`. Both are documented, covered by
+  [`dataset_dictionary()`](https://r4sub.github.io/r4subdata/reference/dataset_dictionary.md),
+  listed by
+  [`list_datasets()`](https://r4sub.github.io/r4subdata/reference/list_datasets.md)
+  (group `"oncology"`), and guarded by the schema-contract test.
+- Added `risk_register_oncology`: a 15-row FMEA risk register for the
+  synthetic oncology study ONCO-2025-001, mirroring the schema of
+  `risk_register_pharma`. It is documented, covered by
+  [`dataset_dictionary()`](https://r4sub.github.io/r4subdata/reference/dataset_dictionary.md),
+  and listed by
+  [`list_datasets()`](https://r4sub.github.io/r4subdata/reference/list_datasets.md).
+- [`list_datasets()`](https://r4sub.github.io/r4subdata/reference/list_datasets.md)
+  now includes a `group` column tagging each dataset as `"pharma"` or
+  `"oncology"`.
+- Added a schema-contract test asserting that every documented dataset’s
+  row/column counts and column types match the shipped data.
 - [`dataset_dictionary()`](https://r4sub.github.io/r4subdata/reference/dataset_dictionary.md)
   now returns column dictionaries for `oncology_metadata` and
   `oncology_evidence`; previously these two datasets (exported and

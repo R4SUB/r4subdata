@@ -7,6 +7,8 @@
 <url><loc>https://r4sub.github.io/r4subdata/index.html</loc></url>
 <url><loc>https://r4sub.github.io/r4subdata/news/index.html</loc></url>
 <url><loc>https://r4sub.github.io/r4subdata/reference/adam_metadata.html</loc></url>
+<url><loc>https://r4sub.github.io/r4subdata/reference/cns_evidence.html</loc></url>
+<url><loc>https://r4sub.github.io/r4subdata/reference/cns_metadata.html</loc></url>
 <url><loc>https://r4sub.github.io/r4subdata/reference/dataset_dictionary.html</loc></url>
 <url><loc>https://r4sub.github.io/r4subdata/reference/evidence_pharma.html</loc></url>
 <url><loc>https://r4sub.github.io/r4subdata/reference/index.html</loc></url>
@@ -15,8 +17,15 @@
 <url><loc>https://r4sub.github.io/r4subdata/reference/oncology_metadata.html</loc></url>
 <url><loc>https://r4sub.github.io/r4subdata/reference/r4subdata-package.html</loc></url>
 <url><loc>https://r4sub.github.io/r4subdata/reference/regulatory_indicators.html</loc></url>
+<url><loc>https://r4sub.github.io/r4subdata/reference/risk_register_cns.html</loc></url>
+<url><loc>https://r4sub.github.io/r4subdata/reference/risk_register_oncology.html</loc></url>
 <url><loc>https://r4sub.github.io/r4subdata/reference/risk_register_pharma.html</loc></url>
 <url><loc>https://r4sub.github.io/r4subdata/reference/sdtm_metadata.html</loc></url>
+<url><loc>https://r4sub.github.io/r4subdata/reference/sdtm_metadata_cns.html</loc></url>
+<url><loc>https://r4sub.github.io/r4subdata/reference/sdtm_metadata_oncology.html</loc></url>
 <url><loc>https://r4sub.github.io/r4subdata/reference/trace_mapping.html</loc></url>
+<url><loc>https://r4sub.github.io/r4subdata/reference/trace_mapping_cns.html</loc></url>
+<url><loc>https://r4sub.github.io/r4subdata/reference/trace_mapping_oncology.html</loc></url>
+<url><loc>https://r4sub.github.io/r4subdata/reference/validate_dataset.html</loc></url>
 </urlset>
 
