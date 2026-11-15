@@ -1,5 +1,20 @@
 # r4subdata (development version)
 
+- Added a second synthetic therapeutic-area example bundle for the CNS
+  (neuroscience) study `CNS-2025-001`, modelled on a Phase II Alzheimer's
+  disease trial, so users can demo the full ecosystem on a second study:
+  `cns_metadata` (ADaM metadata for ADSL, ADQS, ADTTE), `cns_evidence`
+  (29-row evidence table across all four pillars), `risk_register_cns`
+  (15-row FMEA register), `sdtm_metadata_cns` (SDTM metadata for DM, QS, SC),
+  and `trace_mapping_cns` (ADaM-to-SDTM mapping). Each object mirrors the
+  column/type contract of its oncology counterpart exactly; the bundle is
+  internally consistent (IDs line up across the trace mapping) and round-trips
+  through `r4subtrace::build_trace_model()`. All values are synthetic and no
+  regulatory reference values are invented. The datasets are documented,
+  covered by `dataset_dictionary()`, listed by `list_datasets()` (group
+  `"cns"`), and guarded by the schema-contract and per-dataset tests.
+- `list_datasets()` `group` column now also tags datasets as `"cns"`
+  (CNS-2025-001).
 - Added `validate_dataset()`: a structural schema-validation helper that checks
   a data frame against the column/type schema of a shipped dataset (as defined
   by `dataset_dictionary()`) or against a custom dictionary of the same shape.

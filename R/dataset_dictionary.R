@@ -17,7 +17,9 @@ dataset_dictionary <- function(dataset) {
     "evidence_pharma", "adam_metadata", "sdtm_metadata",
     "trace_mapping", "risk_register_pharma", "regulatory_indicators",
     "oncology_metadata", "oncology_evidence", "risk_register_oncology",
-    "sdtm_metadata_oncology", "trace_mapping_oncology"
+    "sdtm_metadata_oncology", "trace_mapping_oncology",
+    "cns_metadata", "cns_evidence", "risk_register_cns",
+    "sdtm_metadata_cns", "trace_mapping_cns"
   )
   if (!dataset %in% valid) {
     stop(
@@ -235,6 +237,107 @@ dataset_dictionary <- function(dataset) {
                "character", "numeric"),
       description = c(
         "Source ADaM dataset (ADSL, ADRS, ADTTE)",
+        "Source ADaM variable",
+        "Target SDTM domain (NA if derived)",
+        "Target SDTM variable (NA if derived)",
+        "Derivation description text",
+        "Mapping confidence score (0-1, NA if unmapped)"
+      )
+    ),
+    cns_metadata = tibble::tibble(
+      column = c(
+        "dataset", "variable", "label", "origin", "derivation",
+        "codelist", "type"
+      ),
+      type = c(
+        "character", "character", "character", "character",
+        "character", "character", "character"
+      ),
+      description = c(
+        "ADaM dataset name (ADSL, ADQS, ADTTE)",
+        "Variable name",
+        "Variable label",
+        "Variable origin (CRF, Derived, Assigned)",
+        "Derivation text (NA if not derived)",
+        "CDISC codelist code (NA if not applicable)",
+        "Variable type (Char or Num)"
+      )
+    ),
+    cns_evidence = tibble::tibble(
+      column = c(
+        "run_id", "study_id", "asset_type", "asset_id", "source_name",
+        "source_version", "indicator_id", "indicator_name", "indicator_domain",
+        "severity", "result", "metric_value", "metric_unit", "message",
+        "location", "evidence_payload", "created_at"
+      ),
+      type = c(
+        "character", "character", "character", "character", "character",
+        "character", "character", "character", "character",
+        "character", "character", "numeric", "character", "character",
+        "character", "character", "POSIXct"
+      ),
+      description = c(
+        "Unique run identifier",
+        "Study identifier (CNS-2025-001)",
+        "Asset type: dataset, define, program, validation, spec, other",
+        "Asset identifier (e.g., ADSL, ADQS)",
+        "Source tool name",
+        "Version of the source tool",
+        "Indicator identifier (e.g., Q-MISS-VAR)",
+        "Human-readable indicator name",
+        "Indicator domain: quality, trace, risk, usability",
+        "Severity level: info, low, medium, high, critical",
+        "Check result: pass, fail, warn, na",
+        "Numeric metric value (if applicable)",
+        "Unit for metric_value",
+        "Descriptive message for the evidence row",
+        "Location reference (e.g., ADQS:AVAL)",
+        "JSON payload with additional details",
+        "Timestamp when evidence was created"
+      )
+    ),
+    risk_register_cns = tibble::tibble(
+      column = c(
+        "risk_id", "description", "category", "probability", "impact",
+        "detectability", "owner", "mitigation", "status"
+      ),
+      type = c(
+        "character", "character", "character", "integer", "integer",
+        "integer", "character", "character", "character"
+      ),
+      description = c(
+        "Unique risk identifier (CNS-RISK-001 to CNS-RISK-015)",
+        "Risk description",
+        "Risk category (data_quality, traceability, documentation, programming, compliance)",
+        "Probability of occurrence (1-5 FMEA scale)",
+        "Impact severity (1-5 FMEA scale)",
+        "Detectability rating (1=easy to detect, 5=hard to detect)",
+        "Risk owner name",
+        "Mitigation action description",
+        "Risk status: open, mitigated, closed, accepted"
+      )
+    ),
+    sdtm_metadata_cns = tibble::tibble(
+      column = c("dataset", "variable", "label", "type", "length", "format"),
+      type = c("character", "character", "character", "character", "integer", "character"),
+      description = c(
+        "SDTM domain name (DM, QS, SC)",
+        "Variable name",
+        "Variable label",
+        "Variable type (Char or Num)",
+        "Variable length",
+        "SAS format"
+      )
+    ),
+    trace_mapping_cns = tibble::tibble(
+      column = c(
+        "adam_dataset", "adam_var", "sdtm_domain", "sdtm_var",
+        "derivation_text", "confidence"
+      ),
+      type = c("character", "character", "character", "character",
+               "character", "numeric"),
+      description = c(
+        "Source ADaM dataset (ADSL, ADQS, ADTTE)",
         "Source ADaM variable",
         "Target SDTM domain (NA if derived)",
         "Target SDTM variable (NA if derived)",

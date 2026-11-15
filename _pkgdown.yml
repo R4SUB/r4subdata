@@ -37,6 +37,19 @@ reference:
     contents:
       - oncology_metadata
       - oncology_evidence
+      - risk_register_oncology
+      - sdtm_metadata_oncology
+      - trace_mapping_oncology
+  - title: "CNS Trial Datasets"
+    contents:
+      - cns_metadata
+      - cns_evidence
+      - sdtm_metadata_cns
+      - trace_mapping_cns
+      - risk_register_cns
+  - title: "Validation"
+    contents:
+      - validate_dataset
 
 footer:
   structure:
